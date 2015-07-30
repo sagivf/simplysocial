@@ -1,0 +1,124 @@
+@import 'node_modules/lesshat/build/lesshat-prefixed';
+
+@base-z-index: 0;
+@header-height: 100px;
+@header-z-index: @base-z-index +1 ;
+@header-input-height: @header-height/2;
+
+@footer-height: 100px;
+
+@main-content-width: 400px;
+
+@main-centered-width: @main-content-width;
+@main-centered-height: 200px;
+@main-centered-spacing: 40px;
+@main-nav-height: 40px;
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+footer {
+  height: @footer-height;
+  background: orange;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: @header-height;
+  width: 100%;
+  z-index: @header-z-index;
+
+  background: black;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  -webkit-transition: background .2s;
+
+  .ins-right-position {
+    position: absolute;
+    height: @header-input-height;
+    right: 10px;
+    top: 50%;
+    margin-top: -1*@header-input-height/2;
+
+    input {
+      height: 100%;
+      background: transparent;
+      border: 1px solid white;
+      .lh-border-radius(4px);
+    }
+  }
+
+  .ins-left-position {
+    position: absolute;
+    height: @header-input-height;
+    left: 10px;
+    top: 50%;
+    margin-top: -1*@header-input-height/2;
+  }
+}
+
+
+main {
+  .ins-navigation-section {
+    background: blue;
+    padding: @main-centered-spacing 0 0 0;
+  }
+
+  .ins-content-section {
+    border: solid black;
+    border-width: 0 1px;
+    margin: auto auto;
+    width: @main-content-width;
+    min-height: 300px;
+  }
+
+  .ins-create-post {
+    margin: auto auto;
+    height: @main-centered-height;
+    width: @main-centered-width;
+    background: green;
+  }
+
+  nav {
+    display: table;
+    height: @main-nav-height;
+    width: @main-centered-width;
+    margin: (@main-centered-spacing - @main-nav-height) auto 0 auto;
+    position: relative;
+    ul {
+      display:table-row;
+      padding: 0;
+      height: 100%;
+      margin: 0;
+      top: 0;
+      list-style-type: none;
+      li {
+        padding: 0;
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+
+.ins-header-filler {
+  height: @header-height;
+}
+
+.ins-page-wrap {
+  min-height: 100%;
+  margin-bottom: -@header-height;
+
+  &:after {
+    content: "";
+    display: block;
+  }
+}
