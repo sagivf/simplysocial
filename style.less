@@ -7,7 +7,7 @@
 
 @footer-height: 100px;
 
-@main-content-width: 400px;
+@main-content-width: 600px;
 
 @main-centered-width: @main-content-width;
 @main-centered-height: 200px;
@@ -16,10 +16,15 @@
 
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 html, body {
   height: 100%;
+}
+
+body {
+  padding-top: @header-height;
 }
 
 footer {
@@ -72,11 +77,9 @@ main {
   }
 
   .ins-content-section {
-    border: solid black;
-    border-width: 0 1px;
     margin: auto auto;
     width: @main-content-width;
-    min-height: 300px;
+    padding: 20px 0;
   }
 
   .ins-create-post {
@@ -108,11 +111,6 @@ main {
   }
 }
 
-
-.ins-header-filler {
-  height: @header-height;
-}
-
 .ins-page-wrap {
   min-height: 100%;
   margin-bottom: -@header-height;
@@ -120,5 +118,29 @@ main {
   &:after {
     content: "";
     display: block;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    height: @footer-height;
+  }
+}
+
+article {
+  width: 100%;
+  padding-left: 150px;
+  border: 1px solid grey;
+  .lh-border-radius(4px);
+  position: relative;
+  margin-bottom: 20px;
+  img {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+
+  h6 {
+    margin: 10px 0 10px 0;
   }
 }
