@@ -1,0 +1,4 @@
+article(ng-repeat="post in posts")
+  img(ng-src="https://s.gravatar.com/avatar/{{post.imageId}}?s=80")
+  h6 {{post.name}}
+  p(ng-bind-html='post.text')

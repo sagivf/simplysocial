@@ -1,22 +1,30 @@
-@import 'node_modules/lesshat/build/lesshat-prefixed';
+@import '../node_modules/lesshat/build/lesshat-prefixed';
+
+@black: #262729;
+@green: #36B798;
+@white: white;
+
 
 @base-z-index: 0;
-@header-height: 100px;
+@header-height: 60px;
 @header-z-index: @base-z-index +1 ;
 @header-input-height: @header-height/2;
 
-@footer-height: 100px;
-
+@footer-height: 40px;
 @main-content-width: 600px;
 
 @main-centered-width: @main-content-width;
-@main-centered-height: 200px;
 @main-centered-spacing: 40px;
 @main-nav-height: 40px;
 
+@font-face{
+  font-family:'proxima nova';
+  src: url('../fonts/proxima nova/ProximaNova-Black.otf');
+}
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: 'proxima nova';
 }
 
 html, body {
@@ -28,8 +36,35 @@ body {
 }
 
 footer {
+  font-size: 0.8em;
   height: @footer-height;
-  background: orange;
+  border-top: 1px solid grey;
+  text-align: center;
+  nav {
+    display: table;
+    width: @main-content-width - 150;
+    margin: auto auto;
+    height: 100%;
+    vertical-align: middle;
+    ul {
+      display: table-row;
+      height: 100%;
+      vertical-align: middle;
+      padding: 0;
+      margin: 0;
+      top: 0;
+      list-style-type: none;
+      li {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0;
+
+        &:last-child {
+          padding-left: 40px;
+        }
+      }
+    }
+  }
 }
 
 header {
@@ -41,7 +76,7 @@ header {
   width: 100%;
   z-index: @header-z-index;
 
-  background: black;
+  background: @black;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   -webkit-transition: background .2s;
 
@@ -72,7 +107,7 @@ header {
 
 main {
   .ins-navigation-section {
-    background: blue;
+    background: url(images/Hopetoun_falls.jpg);
     padding: @main-centered-spacing 0 0 0;
   }
 
@@ -84,9 +119,17 @@ main {
 
   .ins-create-post {
     margin: auto auto;
-    height: @main-centered-height;
     width: @main-centered-width;
-    background: green;
+    padding: 20px;
+    background: @green;
+    color: @white;
+    input {
+      background: transparent;
+      border: 0;
+      color: @white;
+      font-size: 2em;
+      outline: none;
+    }
   }
 
   nav {
@@ -97,6 +140,7 @@ main {
     position: relative;
     ul {
       display:table-row;
+      width: 50%;
       padding: 0;
       height: 100%;
       margin: 0;
@@ -104,8 +148,15 @@ main {
       list-style-type: none;
       li {
         padding: 0;
+        text-align: center;
         display: table-cell;
         vertical-align: middle;
+        &.ins-selected  {
+          border-bottom: 5px solid green;
+        }
+        &.ins-spacer {
+          width: 150px;
+        }
       }
     }
   }
@@ -113,7 +164,7 @@ main {
 
 .ins-page-wrap {
   min-height: 100%;
-  margin-bottom: -@header-height;
+  margin-bottom: -@footer-height;
 
   &:after {
     content: "";

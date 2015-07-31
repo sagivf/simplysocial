@@ -1,27 +1,49 @@
 
 angular.module('ins', ['ui.router'])
   .config(function($locationProvider, $stateProvider, $urlRouterProvider){
-    //$locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
 
     $stateProvider
       .state('home', {
         abstract: true,
-        templateUrl: 'templates/home.html'
+        templateUrl: 'templates-cache/home.html'
       })
       .state('home.feed', {
         url: '/feed',
         views: {
           'navigation': {
-            templateUrl: 'templates/feed/navigation.html'
+            templateUrl: 'templates-cache/feed/navigation.html'
           },
           'content': {
-            templateUrl: 'templates/feed/content.html'
+            templateUrl: 'templates-cache/feed/content.html'
           }
         }
       });
 
     $urlRouterProvider.otherwise('feed');
   })
-  .run(function($rootScope){
-    $rootScope.posts = [{},{},{},{}]
+  .run(function($rootScope, $sce){
+    $rootScope.posts = [
+      {
+        name: 'Sam Soffes',
+        imageId: '05375831c9c9cda73859a47d6701f9ac',
+        text:  $sce.trustAsHtml('How to Get inspired: the Right way - Designmondo <a>but.ly/1IE4uJc</a>Good stuff from <a>@designmodo!</a>'),
+        time: new Date(),
+        comments: []
+      },
+      {
+        name: 'Sam Soffes',
+        imageId: '05375831c9c9cda73859a47d6701f9ac',
+        text:  $sce.trustAsHtml('How to Get inspired: the Right way - Designmondo <a>but.ly/1IE4uJc</a>Good stuff from <a>@designmodo!</a>'),
+        time: new Date(),
+        comments: []
+      },
+      {
+        name: 'Sam Soffes',
+        imageId: '05375831c9c9cda73859a47d6701f9ac',
+        text:  $sce.trustAsHtml('How to Get inspired: the Right way - Designmondo <a>but.ly/1IE4uJc</a>Good stuff from <a>@designmodo!</a>'),
+        time: new Date(),
+        comments: []
+      }
+    ]
   });

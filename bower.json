@@ -1,0 +1,20 @@
+{
+  "name": "simplysocial",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sagivf/simplysocial",
+  "authors": [
+    "sagivf <sagivf@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ui-router": "~0.2.15",
+    "angular": "~1.4.3"
+  }
+}
