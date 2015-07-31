@@ -1,7 +1,6 @@
 
 angular.module('ins', ['ui.router'])
-  .config(function($locationProvider, $stateProvider, $urlRouterProvider){
-    $locationProvider.html5Mode(true);
+  .config(function($stateProvider, $urlRouterProvider){
 
     $stateProvider
       .state('home', {
