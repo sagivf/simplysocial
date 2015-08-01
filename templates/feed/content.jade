@@ -1,4 +1,5 @@
 article(ng-repeat="post in posts")
-  img(ng-src="https://s.gravatar.com/avatar/{{post.imageId}}?s=80")
-  h6 {{post.name}}
-  p(ng-bind-html='post.text')
+  img(ng-src="external/avatars/{{post.name.toLowerCase().replace(' ', '-')}}.png")
+  div.ins-details
+    h3 {{post.name}}
+    p(ng-bind-html='post.text')

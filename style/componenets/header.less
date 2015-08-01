@@ -1,0 +1,46 @@
+@import "../../node_modules/lesshat/build/lesshat-prefixed";
+
+@import "../resets";
+@import "../colors";
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: @header-height;
+  width: 100%;
+  z-index: @header-z-index;
+
+  background: @black;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  -webkit-transition: background .2s;
+
+  .ins-right-position {
+    position: absolute;
+    height: @header-input-height;
+    right: 10px;
+    top: 50%;
+    margin-top: -1*@header-input-height/2;
+
+    input {
+      height: 100%;
+      background: transparent;
+      .lh-border-radius(4px);
+      padding: 2px 34px 0px 4px;
+      width: 200px;
+      border: 1px solid #44474b;
+    }
+  }
+
+  .ins-left-position {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    margin-top: -14px;
+    img {
+      width: 137px;
+      height: 28px;
+    }
+  }
+}

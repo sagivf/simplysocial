@@ -1,11 +1,7 @@
-@font-face {
-  font-family: 'proxima nova';
-  src: url('../fonts/proxima nova/ProximaNova-Black.otf');
-}
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'proxima nova';
+  font-family: 'Open Sans', sans-serif;
 }
 html,
 body {
@@ -13,6 +9,13 @@ body {
 }
 body {
   padding-top: 60px;
+}
+a {
+  color: #cccccc;
+}
+@font-face {
+  font-family: 'proxima nova';
+  src: url('../fonts/proxima nova/ProximaNova-Black.otf');
 }
 footer {
   font-size: 0.8em;
@@ -22,7 +25,7 @@ footer {
 }
 footer nav {
   display: table;
-  width: 450px;
+  width: 422px;
   margin: auto auto;
   height: 100%;
   vertical-align: middle;
@@ -44,56 +47,24 @@ footer nav ul li {
 footer nav ul li:last-child {
   padding-left: 40px;
 }
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 60px;
-  width: 100%;
-  z-index: 0 1;
-  background: #262729;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  -webkit-transition: background .2s;
-}
-header .ins-right-position {
-  position: absolute;
-  height: 30px;
-  right: 10px;
-  top: 50%;
-  margin-top: -15px;
-}
-header .ins-right-position input {
-  height: 100%;
-  background: transparent;
-  border: 1px solid white;
-  -webkit-border-radius: 4px;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 4px;
-  -moz-background-clip: padding;
-  border-radius: 4px;
-  background-clip: padding-box;
-}
-header .ins-left-position {
-  position: absolute;
-  height: 30px;
-  left: 10px;
-  top: 50%;
-  margin-top: -15px;
-}
 main .ins-navigation-section {
-  background: url(images/Hopetoun_falls.jpg);
-  padding: 40px 0 0 0;
+  background: url(images/main.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 100px 0 0 0;
 }
 main .ins-content-section {
   margin: auto auto;
-  width: 600px;
+  width: 572px;
   padding: 20px 0;
 }
 main .ins-create-post {
   margin: auto auto;
-  width: 600px;
-  padding: 20px;
-  background: #36b798;
+  width: 572px;
+  padding: 80px;
+  background: #00b286;
   color: white;
 }
 main .ins-create-post input {
@@ -105,10 +76,13 @@ main .ins-create-post input {
 }
 main nav {
   display: table;
+  text-transform: uppercase;
   height: 40px;
-  width: 600px;
-  margin: 0px auto 0 auto;
+  width: 572px;
+  margin: 60px auto 0 auto;
   position: relative;
+  font-weight: 600;
+  font-size: 12px;
 }
 main nav ul {
   display: table-row;
@@ -144,10 +118,51 @@ main nav ul li.ins-spacer {
   display: block;
   height: 40px;
 }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  z-index: 0 1;
+  background: #000000;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  -webkit-transition: background .2s;
+}
+header .ins-right-position {
+  position: absolute;
+  height: 30px;
+  right: 10px;
+  top: 50%;
+  margin-top: -15px;
+}
+header .ins-right-position input {
+  height: 100%;
+  background: transparent;
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -moz-background-clip: padding;
+  border-radius: 4px;
+  background-clip: padding-box;
+  padding: 2px 34px 0px 4px;
+  width: 200px;
+  border: 1px solid #44474b;
+}
+header .ins-left-position {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  margin-top: -14px;
+}
+header .ins-left-position img {
+  width: 137px;
+  height: 28px;
+}
 article {
   width: 100%;
   padding-left: 150px;
-  border: 1px solid grey;
+  border: 1px solid #e4e6ea;
   -webkit-border-radius: 4px;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 4px;
@@ -159,9 +174,11 @@ article {
 }
 article img {
   position: absolute;
-  left: 10px;
-  top: 10px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  top: 20px;
 }
-article h6 {
+article h3 {
   margin: 10px 0 10px 0;
 }

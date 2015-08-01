@@ -1,38 +1,11 @@
-@import '../node_modules/lesshat/build/lesshat-prefixed';
+@import "../node_modules/lesshat/build/lesshat-prefixed";
 
-@black: #262729;
-@green: #36B798;
-@white: white;
-
-
-@base-z-index: 0;
-@header-height: 60px;
-@header-z-index: @base-z-index +1 ;
-@header-input-height: @header-height/2;
-
-@footer-height: 40px;
-@main-content-width: 600px;
-
-@main-centered-width: @main-content-width;
-@main-centered-spacing: 40px;
-@main-nav-height: 40px;
+@import "resets";
+@import "colors";
 
 @font-face{
   font-family:'proxima nova';
   src: url('../fonts/proxima nova/ProximaNova-Black.otf');
-}
-* {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'proxima nova';
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  padding-top: @header-height;
 }
 
 footer {
@@ -67,47 +40,15 @@ footer {
   }
 }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  height: @header-height;
-  width: 100%;
-  z-index: @header-z-index;
-
-  background: @black;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  -webkit-transition: background .2s;
-
-  .ins-right-position {
-    position: absolute;
-    height: @header-input-height;
-    right: 10px;
-    top: 50%;
-    margin-top: -1*@header-input-height/2;
-
-    input {
-      height: 100%;
-      background: transparent;
-      border: 1px solid white;
-      .lh-border-radius(4px);
-    }
-  }
-
-  .ins-left-position {
-    position: absolute;
-    height: @header-input-height;
-    left: 10px;
-    top: 50%;
-    margin-top: -1*@header-input-height/2;
-  }
-}
 
 
 main {
   .ins-navigation-section {
-    background: url(images/Hopetoun_falls.jpg);
+    background: url(images/main.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     padding: @main-centered-spacing 0 0 0;
   }
 
@@ -120,7 +61,7 @@ main {
   .ins-create-post {
     margin: auto auto;
     width: @main-centered-width;
-    padding: 20px;
+    padding: 80px;
     background: @green;
     color: @white;
     input {
@@ -134,10 +75,13 @@ main {
 
   nav {
     display: table;
+    text-transform: uppercase;
     height: @main-nav-height;
     width: @main-centered-width;
     margin: (@main-centered-spacing - @main-nav-height) auto 0 auto;
     position: relative;
+    font-weight: 600;
+    font-size: 12px;
     ul {
       display:table-row;
       width: 50%;
@@ -178,20 +122,5 @@ main {
   }
 }
 
-article {
-  width: 100%;
-  padding-left: 150px;
-  border: 1px solid grey;
-  .lh-border-radius(4px);
-  position: relative;
-  margin-bottom: 20px;
-  img {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-  }
-
-  h6 {
-    margin: 10px 0 10px 0;
-  }
-}
+@import "componenets/header";
+@import "feed";

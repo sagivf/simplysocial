@@ -10,7 +10,7 @@ require("gulp-help")(gulp);
 
 var dest = path.join('dist'),
     jadeFiles = path.join('templates', '**', '*.jade'),
-    lessFiles = path.join('style', '**', '*.less'),
+    lessFiles = path.join('style', 'ins.less'),
     imageFiles = path.join('style', 'images', '*.*'),
     bowerFiles = [
       'ui-router/release/angular-ui-router.min.js',
