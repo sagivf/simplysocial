@@ -17,7 +17,6 @@ var dest = path.join('dist'),
     jadeFiles = path.join('src', 'templates', '**', '*.jade'),
     lessFile = path.join('src', 'style', 'style.less'),
     lessFiles = path.join('src', 'style', '**', '*.less'),
-    imageFiles = path.join('src', 'style', 'images', '*.*'),
     bowerFiles = [
       'ui-router/release/angular-ui-router.min.js',
       'angular/angular.min.js'].map(function(file){
@@ -25,11 +24,8 @@ var dest = path.join('dist'),
       });
 
 gulp.task("build", "Create build resources", ["build:less", "build:templates", "build:scripts"], function(){
-  gulp.src(imageFiles)
-      .pipe(gulp.dest(path.join('dist', 'images')));
-
-  gulp.src(bowerFiles)
-    .pipe(gulp.dest(dest));
+  return gulp.src(bowerFiles)
+    .pipe(gulp.dest('dist/bower'));
 });
 
 gulp.task("build:less", "Create css from less", false, function () {

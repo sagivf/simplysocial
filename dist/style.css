@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'ProximaNova-Regular';
-  src: url(/fonts/proxima-nova/ProximaNova-Regular.otf);
+  src: url(../fonts/proxima-nova/ProximaNova-Regular.otf);
 }
 @font-face {
   font-family: 'ProximaNova-Bold';
-  src: url(/fonts/proxima-nova/ProximaNova-Bold.otf);
+  src: url(../fonts/proxima-nova/ProximaNova-Bold.otf);
 }
 @font-face {
   font-family: 'ProximaNova-Light';
-  src: url(/fonts/proxima-nova/ProximaNova-Light.otf);
+  src: url(../fonts/proxima-nova/ProximaNova-Light.otf);
 }
 * {
   margin: 0;
@@ -214,7 +214,7 @@ footer nav ul li:last-child {
   padding-left: 40px;
 }
 main .ins-navigation-section {
-  background: url(/dist/images/main.jpg);
+  background: url(../images/main.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
