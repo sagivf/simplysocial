@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 9]><html class="lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if lt IE 9]>
+<html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en"> <!--<![endif]-->
 <head>
   <title>Login</title>
   <!--<link rel="icon" type="image/ico" href="/favicon.ico"/>-->
@@ -19,33 +21,51 @@
   <script src="dist/angular-ui-router.min.js" type="text/javascript"></script>
 </head>
 <body ng-app="ins">
-  <div class="ins-page-wrap">
-    <header>
-      <div class="ins-right-position">
-        <i class="icon-bubble2"></i>
-        <input class="ins-input" type="text">
-      </div>
-      <div class="ins-left-position">
-        <a><img src="dist/images/logo.png"/></a>
-      </div>
-    </header>
-    <main ui-view>
-    </main>
-  </div>
-  <footer>
-    <nav>
-      <ul>
-        <li><a>About Us</a></li>
-        <li><a>Support</a></li>
-        <li><a>Privacy</a></li>
-        <li><a>Terms</a></li>
-        <li><a>@2014 SimplySocial</a></li>
-      </ul>
-    </nav>
-  </footer>
+<div class="ins-page-wrap">
+  <header>
+    <div class="ins-right-position">
+      <i class="icon-bubble2"></i>
+      <input class="ins-input" type="text">
+    </div>
+    <div class="ins-left-position">
+      <a><img src="dist/images/logo.png"/></a>
+    </div>
+  </header>
+  <main ui-view>
+  </main>
+</div>
+<footer>
+  <nav>
+    <ul>
+      <li><a>About Us</a></li>
+      <li><a>Support</a></li>
+      <li><a>Privacy</a></li>
+      <li><a>Terms</a></li>
+      <li><a>@2014 SimplySocial</a></li>
+    </ul>
+  </nav>
+</footer>
 
-  <script src="dist/app.js"></script>
-  <script src="dist/templates.js"></script>
+<div class="ins-overlay" ng-show="showMessageWindow"></div>
+<div class="ins-modal" ng-show="showMessageWindow">
+  <h2>Create new message</h2>
+  <textarea></textarea>
+  <div class="ins-actions">
+    <div class="ins-left-position">
+      <a>
+        <span class="icon icon-camera-active"></span>Add Photo
+      </a>
+      <a>
+        <span class="icon icon-video-active"></span>Add Video
+      </a>
+    </div>
+    <button type="submit" class="ins-button">Post</button>
+  </div>
+  <div class="ins- close icon" ng-click="closeModal()"></div>
+</div>
+
+<script src="dist/app.js"></script>
+<script src="dist/templates.js"></script>
 </body>
 </html>
 

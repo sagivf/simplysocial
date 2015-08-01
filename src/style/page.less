@@ -1,0 +1,19 @@
+& {
+  @import (multiple, reference) "sizes";
+
+  .ins-page-wrap {
+    min-height: 100%;
+    margin-bottom: -@footer-height;
+
+    &:after {
+      content: "";
+      display: block;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      height: @footer-height;
+    }
+  }
+}

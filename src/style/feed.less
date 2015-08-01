@@ -1,0 +1,48 @@
+& {
+  @import (multiple, reference) "../../node_modules/lesshat/build/lesshat-prefixed";
+  @import (multiple, reference) "colors";
+
+  article {
+    width: 100%;
+    border: 1px solid @grey;
+    .lh-border-radius(4px);
+    margin-bottom: 20px;
+
+    .ins-body {
+      padding-left: 100px;
+      position: relative;
+      > img {
+        position: absolute;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        top: 20px;
+      }
+
+      .ins-details {
+        h3 {
+          margin: 10px 0 10px 0;
+        }
+      }
+
+      .ins-expand {
+        margin-top: 10px;
+      }
+    }
+
+    > img {
+      margin-top: 20px;
+    }
+
+    .ins-comments {
+      background: @grey-light;
+
+      .ins-respond {
+        padding: 10px;
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

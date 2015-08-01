@@ -1,0 +1,35 @@
+& {
+  @import  (multiple, reference)"../sizes";
+
+  footer {
+    font-size: 0.8em;
+    height: @footer-height;
+    border-top: 1px solid grey;
+    text-align: center;
+    nav {
+      display: table;
+      width: @main-content-width - 150;
+      margin: auto auto;
+      height: 100%;
+      vertical-align: middle;
+      ul {
+        display: table-row;
+        height: 100%;
+        vertical-align: middle;
+        padding: 0;
+        margin: 0;
+        top: 0;
+        list-style-type: none;
+        li {
+          display: table-cell;
+          vertical-align: middle;
+          padding: 0;
+
+          &:last-child {
+            padding-left: 40px;
+          }
+        }
+      }
+    }
+  }
+}

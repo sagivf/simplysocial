@@ -1,4 +1,4 @@
-/// <reference path="../typings/tsd.d.ts"/>
+/// <reference path="../../typings/tsd.d.ts"/>
 
 import feedRouting from "./feed.routing"
 
@@ -17,20 +17,23 @@ angular.module('ins', ['ui.router'])
     $rootScope.posts = [
       {
         name: 'Sam Soffes',
+        userImage: 'sam-soffes.png',
         text: $sce.trustAsHtml('How to Get inspired: the Right way - Designmondo <a>but.ly/1IE4uJc</a>Good stuff from <a>@designmodo!</a>'),
         time: new Date(),
-        comments: []
+        comments: [
+          {
+            name: 'Jed Bridges',
+            userImage: 'sam-soffes.png',
+            text: $sce.trustAsHtml('How to Get inspired: the Right way - Designmondo <a>but.ly/1IE4uJc</a>Good stuff from <a>@designmodo!</a>'),
+          }
+        ]
       },
       {
-        name: 'Sam Soffes',
-        text: $sce.trustAsHtml('How to Get inspired: the Right way - Designmondo <a>but.ly/1IE4uJc</a>Good stuff from <a>@designmodo!</a>'),
+        name: 'Meg Robichaud',
+        userImage: 'meg-robichaud.png',
+        text: $sce.trustAsHtml('My view this '),
         time: new Date(),
-        comments: []
-      },
-      {
-        name: 'Sam Soffes',
-        text: $sce.trustAsHtml('How to Get inspired: the Right way - Designmondo <a>but.ly/1IE4uJc</a>Good stuff from <a>@designmodo!</a>'),
-        time: new Date(),
+        image: 'post1.jpg',
         comments: []
       }
     ]

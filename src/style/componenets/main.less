@@ -1,0 +1,47 @@
+& {
+  @import (multiple, reference) "../sizes";
+
+  main {
+    .ins-navigation-section {
+      background: url(/dist/images/main.jpg);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      padding: @main-centered-spacing 0 0 0;
+    }
+
+    .ins-content-section {
+      margin: auto auto;
+      width: @main-content-width;
+      padding: 20px 0;
+    }
+
+    nav {
+      display: table;
+      font-family: ProximaNova-Bold;
+      text-transform: uppercase;
+      height: @main-nav-height;
+      width: @main-centered-width;
+      margin: (@main-centered-spacing - @main-nav-height) auto 0 auto;
+      position: relative;
+      ul {
+        display: table-row;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        li {
+          text-align: center;
+          display: table-cell;
+          vertical-align: middle;
+          &.ins-selected {
+            border-bottom: 5px solid green;
+          }
+          &.ins-spacer {
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+}

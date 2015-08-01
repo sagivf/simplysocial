@@ -1,0 +1,41 @@
+& {
+  @import (multiple, reference) "colors";
+  @import (multiple, reference) "sizes";
+
+  @linkColor: #ccc;
+
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    font: 13px/1.4 ProximaNova-Regular, Helvetica, Sans-serif;
+    background-color: #FFF;
+    color: #666;
+    font-weight: normal;
+    line-height: 1.4;
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    padding-top: @header-height;
+
+  }
+
+  a {
+    color: @linkColor;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li {
+      padding: 0;
+    }
+  }
+}

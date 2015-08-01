@@ -13,10 +13,11 @@ var gulp = require('gulp'),
 require("gulp-help")(gulp);
 
 var dest = path.join('dist'),
-    jadeFiles = path.join('templates', '**', '*.jade'),
-    lessFile = path.join('style', 'style.less'),
-    lessFiles = path.join('style', '**', '*.less'),
-    imageFiles = path.join('style', 'images', '*.*'),
+    scriptFiles = path.join('src', 'js', '**', '*.ts'),
+    jadeFiles = path.join('src', 'templates', '**', '*.jade'),
+    lessFile = path.join('src', 'style', 'style.less'),
+    lessFiles = path.join('src', 'style', '**', '*.less'),
+    imageFiles = path.join('src', 'style', 'images', '*.*'),
     bowerFiles = [
       'ui-router/release/angular-ui-router.min.js',
       'angular/angular.min.js'].map(function(file){
@@ -54,7 +55,7 @@ gulp.task("build:templates", "Create html templateCache from jade", false, funct
 });
 
 gulp.task('build:tsc', function () {
-  var tsResult = gulp.src('src/**/*.ts')
+  var tsResult = gulp.src(scriptFiles)
     .pipe(ts({
       target: 'ES3',
       module: 'commonjs',
@@ -77,6 +78,7 @@ gulp.task('build:scripts', false, ["build:tsc"], function () {
 gulp.task('watch', "Watch file changes and auto compile for development", function () {
   gulp.watch(jadeFiles, ['build:templates']);
   gulp.watch(lessFiles, ['build:less']);
+  gulp.watch(scriptFiles, ['build:less']);
 });
 
 gulp.task('serve', "Serve files after build and watch", ["build", "watch"], function () {
