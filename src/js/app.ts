@@ -3,7 +3,8 @@
 import feedRouting from "./feed.routing"
 import settingsRouting from "./settings.routing"
 
-angular.module('ins', ['ui.router', 'monospaced.elastic'])
+
+angular.module('ins', ['ui.router', 'monospaced.elastic', 'angularMoment'])
   .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state('home', {
@@ -14,14 +15,15 @@ angular.module('ins', ['ui.router', 'monospaced.elastic'])
     $urlRouterProvider.otherwise('feed');
   })
   .config(feedRouting)
+  .constant('moment', moment)
   .config(settingsRouting)
-  .run(function ($rootScope, $sce) {
+  .run(function ($rootScope, $sce, moment) {
     $rootScope.posts = [
       {
         name: 'Sam Soffes',
         userImage: 'sam-soffes.png',
         text: $sce.trustAsHtml('How to Get inspired: the Right way - Designmondo <a>but.ly/1IE4uJc</a> Good stuff from <a>@designmodo!</a>'),
-        time: new Date(),
+        time: moment().add(-3, 'minutes'),
         comments: [
           {
             name: 'Jed Bridges',
@@ -38,7 +40,7 @@ angular.module('ins', ['ui.router', 'monospaced.elastic'])
         name: 'Meg Robichaud',
         userImage: 'meg-robichaud.png',
         text: $sce.trustAsHtml('My view this '),
-        time: new Date(),
+        time: moment().add(-25, 'minutes'),
         image: 'post1.jpg',
         comments: []
       }

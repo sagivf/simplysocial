@@ -20,6 +20,8 @@ var dest = path.join('dist'),
     bowerFiles = [
       'ui-router/release/angular-ui-router.min.js',
       'angular/angular.min.js',
+      'angular-moment/angular-moment.min.js',
+      'moment/min/moment.min.js',
       'angular-elastic/elastic.js'
     ].map(function(file){
         return path.join('bower_components', file);

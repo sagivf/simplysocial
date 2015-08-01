@@ -2,7 +2,7 @@
 /// <reference path="../../typings/tsd.d.ts"/>
 var feed_routing_1 = require("./feed.routing");
 var settings_routing_1 = require("./settings.routing");
-angular.module('ins', ['ui.router', 'monospaced.elastic'])
+angular.module('ins', ['ui.router', 'monospaced.elastic', 'angularMoment'])
     .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider.state('home', {
         abstract: true,
@@ -11,14 +11,15 @@ angular.module('ins', ['ui.router', 'monospaced.elastic'])
     $urlRouterProvider.otherwise('feed');
 })
     .config(feed_routing_1["default"])
+    .constant('moment', moment)
     .config(settings_routing_1["default"])
-    .run(function ($rootScope, $sce) {
+    .run(function ($rootScope, $sce, moment) {
     $rootScope.posts = [
         {
             name: 'Sam Soffes',
             userImage: 'sam-soffes.png',
             text: $sce.trustAsHtml('How to Get inspired: the Right way - Designmondo <a>but.ly/1IE4uJc</a> Good stuff from <a>@designmodo!</a>'),
-            time: new Date(),
+            time: moment().add(-3, 'minutes'),
             comments: [
                 {
                     name: 'Jed Bridges',
@@ -35,7 +36,7 @@ angular.module('ins', ['ui.router', 'monospaced.elastic'])
             name: 'Meg Robichaud',
             userImage: 'meg-robichaud.png',
             text: $sce.trustAsHtml('My view this '),
-            time: new Date(),
+            time: moment().add(-25, 'minutes'),
             image: 'post1.jpg',
             comments: []
         }

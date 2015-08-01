@@ -4,9 +4,9 @@ article(ng-repeat="post in posts")
     div.ins-details
       h3 {{post.name}}
       div.ins-actions
-        i.icon-circle-down
-        i.icon-circle-down
-        i.icon-circle-down
+        i.icon-new-tab
+        i.icon-heart
+        span(am-time-ago="post.time")
       p(ng-bind-html='post.text')
       div.ins-expand(ng-if="post.comments.length")
         a(ng-click="post.expanded = !post.expanded")

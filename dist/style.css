@@ -480,6 +480,9 @@ main nav ul li.ins-right-align {
   left: 15px;
   top: 8px;
 }
+.ins-settings-page form.ins-form .ins-inputs-section label {
+  font-size: 1.5em;
+}
 .ins-settings-page form.ins-form .ins-inputs-section input {
   display: block;
   width: 100%;
@@ -554,7 +557,7 @@ article .ins-body .ins-details .ins-actions {
   top: 0;
 }
 article .ins-body .ins-details .ins-actions i {
-  margin-left: 10px;
+  margin-right: 10px;
 }
 article .ins-body .ins-expand {
   margin: 10px 0 20px 0;
