@@ -19,7 +19,9 @@ var dest = path.join('dist'),
     lessFiles = path.join('src', 'style', '**', '*.less'),
     bowerFiles = [
       'ui-router/release/angular-ui-router.min.js',
-      'angular/angular.min.js'].map(function(file){
+      'angular/angular.min.js',
+      'angular-elastic/elastic.js'
+    ].map(function(file){
         return path.join('bower_components', file);
       });
 

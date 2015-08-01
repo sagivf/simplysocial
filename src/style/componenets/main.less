@@ -1,5 +1,6 @@
 & {
   @import (multiple, reference) "../sizes";
+  @import (multiple, reference) "../colors";
 
   main {
     .ins-navigation-section {
@@ -35,7 +36,7 @@
           display: table-cell;
           vertical-align: middle;
           &.ins-selected {
-            border-bottom: 5px solid green;
+            border-bottom: 5px solid @green;
           }
           &.ins-spacer {
             width: 150px;

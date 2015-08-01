@@ -1,6 +1,10 @@
 & {
   @import (multiple, reference) "sizes";
 
+  [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+  }
+
   .ins-page-wrap {
     min-height: 100%;
     margin-bottom: -@footer-height;

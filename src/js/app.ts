@@ -2,7 +2,7 @@
 
 import feedRouting from "./feed.routing"
 
-angular.module('ins', ['ui.router'])
+angular.module('ins', ['ui.router', 'monospaced.elastic'])
   .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state('home', {

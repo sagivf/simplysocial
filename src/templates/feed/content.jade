@@ -5,7 +5,7 @@ article(ng-repeat="post in posts")
       h3 {{post.name}}
       p(ng-bind-html='post.text')
       div.ins-expand(ng-if="post.comments.length")
-        a(ng-click="post.expanded = true")
+        a(ng-click="post.expanded = !post.expanded")
           | expand
           i.icon-circle-down
   div(ng-show="post.expanded").ins-comments
