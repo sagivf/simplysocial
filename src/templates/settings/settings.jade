@@ -1,0 +1,63 @@
+.ins-settings-page
+  .ins-content-section
+    h1 Settings
+    h2 Account
+    form.ins-form
+      .ins-image-section
+        img(src="external/avatars/user-profile.jpg")
+        button.ins-button Change
+      .ins-inputs-section
+        div.ins-input-image
+          i.icon-envelop
+          input.ins-input
+        div.ins-input-image
+          i.icon-envelop
+          input(type="email").ins-input
+        div.ins-input-image
+          i.icon-envelop
+          input(type="password").ins-input
+    hr
+    h2 Notifications
+    div.switch
+
+    ul
+      li.ins-switch
+        input(id="ins-toggle-1", type="checkbox").ins-toggle.ins-toggle-round-flat
+        label(for="ins-toggle-1")
+        label(for="ins-toggle-1") email me when my posts are marked as favorites
+      li.ins-switch
+        input(id="ins-toggle-2", type="checkbox").ins-toggle.ins-toggle-round-flat
+        label(for="ins-toggle-2")
+        label(for="ins-toggle-2") email me when I'm mentioned
+      li
+        input(id="ins-toggle-3", type="checkbox").ins-toggle.ins-toggle-round-flat
+        label(for="ins-toggle-3")
+        label(for="ins-toggle-3") email me when I get a reply
+      li
+        input(id="ins-toggle-4", type="checkbox").ins-toggle.ins-toggle-round-flat
+        label(for="ins-toggle-4")
+        label(for="ins-toggle-4") email me when someone follows me
+    hr
+    h2 Privacy
+    ul
+      li
+        input(id="ins-toggle-2", type="radio", name="allow-radio")
+        label allow anyone to tag me
+      li
+        input(id="ins-toggle-2", type="radio", name="allow-radio")
+        label only allow people I follow to tag me
+      li
+        input(id="ins-toggle-2", type="radio", name="allow-radio")
+        label don't allow anyone to tag me
+    ul
+      li
+        input(id="ins-toggle-2", type="radio")
+        label add a location to my posts
+      li
+        input(id="ins-toggle-2", type="radio")
+        label let other find me by my email address
+      li
+        input(id="ins-toggle-2", type="radio")
+        label tailor ads based on my information
+    hr
+    button.ins-button Save Changes

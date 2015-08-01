@@ -3,10 +3,14 @@ article(ng-repeat="post in posts")
     img(ng-src="external/avatars/{{post.userImage}}")
     div.ins-details
       h3 {{post.name}}
+      div.ins-actions
+        i.icon-circle-down
+        i.icon-circle-down
+        i.icon-circle-down
       p(ng-bind-html='post.text')
       div.ins-expand(ng-if="post.comments.length")
         a(ng-click="post.expanded = !post.expanded")
-          | expand
+          | {{ post.expanded ? 'collapse' : 'expand' }}
           i.icon-circle-down
   div(ng-show="post.expanded").ins-comments
     ul

@@ -1,11 +1,13 @@
 & {
+  @import  (multiple, reference)"../colors";
   @import  (multiple, reference)"../sizes";
 
   footer {
     font-size: 0.8em;
     height: @footer-height;
-    border-top: 1px solid grey;
+    border-top: 1px solid @grey;
     text-align: center;
+
     nav {
       display: table;
       width: @main-content-width - 150;
@@ -27,6 +29,14 @@
 
           &:last-child {
             padding-left: 40px;
+            a {
+              color: @main;
+            }
+          }
+
+          a {
+            color: @green;
+            text-transform: uppercase;
           }
         }
       }

@@ -1,0 +1,88 @@
+& {
+
+  @import (multiple, reference) "../colors";
+  @import (multiple, reference) "../../../node_modules/lesshat/build/lesshat-prefixed";
+
+  @width: 60px;
+  @height: 30px;
+
+  .ins-switch {
+    position: relative;
+  }
+
+  .ins-toggle {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+
+    & + label {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+
+  input.ins-toggle-round-flat + label {
+    padding: 2px;
+    width: @width;
+    height: @height;
+    .lh-border-radius(@height);
+    -webkit-transition: background 0.4s;
+    -moz-transition: background 0.4s;
+    -o-transition: background 0.4s;
+    transition: background 0.4s;
+  }
+
+  input.ins-toggle-round-flat + label:before, input.ins-toggle-round-flat + label:after {
+    display: block;
+    position: absolute;
+    content: "";
+  }
+
+  input.ins-toggle-round-flat {
+    & + label:before {
+      top: 2px;
+      left: 2px;
+      bottom: 2px;
+      right: 2px;
+      background-color: @green;
+      .lh-border-radius(@height);
+      -webkit-transition: background 0.4s;
+      -moz-transition: background 0.4s;
+      -o-transition: background 0.4s;
+      transition: background 0.4s;
+    }
+
+    & + label:after {
+      top: 4px;
+      left: 4px;
+      bottom: 4px;
+      width: 23px;
+      background-color: @white;
+      .lh-border-radius(25px);
+      -webkit-transition: margin 0.4s, background 0.4s;
+      -moz-transition: margin 0.4s, background 0.4s;
+      -o-transition: margin 0.4s, background 0.4s;
+      transition: margin 0.4s, background 0.4s;
+    }
+  }
+
+  input.ins-toggle-round-flat:checked {
+    & + label {
+      background-color: @grey;
+    }
+
+    & + label:after {
+      margin-left: @height;
+    }
+
+    & + label:before {
+      background-color: @grey;
+    }
+  }
+}

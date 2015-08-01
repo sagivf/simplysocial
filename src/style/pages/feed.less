@@ -1,0 +1,66 @@
+& {
+  @import (multiple, reference) "../../../node_modules/lesshat/build/lesshat-prefixed";
+  @import (multiple, reference) "../colors";
+
+  article {
+    font-size: 16px;
+    font-family: ProximaNova-Light;
+    line-height: 1.125;
+    width: 100%;
+    border: 1px solid @grey;
+    .lh-border-radius(4px);
+    margin-bottom: 20px;
+
+    .ins-body {
+      padding: 20px 40px 0 80px;
+      position: relative;
+      > img {
+        position: absolute;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .ins-details {
+        position: relative;
+        width: 100%;
+        h3 {
+          margin: 0;
+        }
+        p {
+          margin-top: 8px;
+        }
+        .ins-actions {
+          position: absolute;
+          right: -20px;
+          top: 0;
+          i {
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .ins-expand {
+        margin: 10px 0 20px 0;
+      }
+    }
+
+    > img {
+      margin-top: 20px;
+      width: 100%;
+      position: relative;
+      bottom: -8px;
+    }
+
+    .ins-comments {
+      background: @grey-light;
+
+      .ins-respond {
+        padding: 10px;
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

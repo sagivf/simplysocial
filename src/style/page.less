@@ -5,6 +5,12 @@
     display: none !important;
   }
 
+  .ins-content-section {
+    margin: auto auto;
+    max-width: @main-content-width;
+    padding: 20px 0;
+  }
+
   .ins-page-wrap {
     min-height: 100%;
     margin-bottom: -@footer-height;
@@ -20,4 +26,7 @@
       height: @footer-height;
     }
   }
+
+  @import "pages/settings";
+  @import "pages/feed";
 }

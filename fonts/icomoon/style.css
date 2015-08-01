@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?nijztj');
-	src:url('fonts/icomoon.eot?#iefixnijztj') format('embedded-opentype'),
-		url('fonts/icomoon.ttf?nijztj') format('truetype'),
-		url('fonts/icomoon.woff?nijztj') format('woff'),
-		url('fonts/icomoon.svg?nijztj#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?9fjox9');
+	src:url('fonts/icomoon.eot?#iefix9fjox9') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?9fjox9') format('truetype'),
+		url('fonts/icomoon.woff?9fjox9') format('woff'),
+		url('fonts/icomoon.svg?9fjox9#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -29,6 +29,9 @@
 .icon-video-camera:before {
 	content: "\e603";
 }
+.icon-envelop:before {
+	content: "\e60a";
+}
 .icon-bubble2:before {
 	content: "\e600";
 }
@@ -43,6 +46,9 @@
 }
 .icon-heart:before {
 	content: "\e606";
+}
+.icon-cancel-circle:before {
+	content: "\e609";
 }
 .icon-circle-down:before {
 	content: "\e607";

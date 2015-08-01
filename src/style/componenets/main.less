@@ -5,17 +5,7 @@
   main {
     .ins-navigation-section {
       background: url(../images/main.jpg);
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
       padding: @main-centered-spacing 0 0 0;
-    }
-
-    .ins-content-section {
-      margin: auto auto;
-      width: @main-content-width;
-      padding: 20px 0;
     }
 
     nav {
@@ -28,7 +18,6 @@
       position: relative;
       ul {
         display: table-row;
-        width: 50%;
         height: 100%;
         top: 0;
         li {
@@ -40,6 +29,9 @@
           }
           &.ins-spacer {
             width: 150px;
+          }
+          &.ins-right-align {
+            text-align: right;
           }
         }
       }

@@ -9,8 +9,8 @@
 
   <!-- Custom webfonts -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400,300' rel='stylesheet' type='text/css'>
-  <!--<link type="text/css" rel="stylesheet" href="fonts/icomoon/style.css">-->
-  <link rel="stylesheet" href="https://i.icomoon.io/public/temp/5eb130f83c/simplysocial/style.css">
+  <link type="text/css" rel="stylesheet" href="fonts/icomoon/style.css">
+  <!--<link rel="stylesheet" href="https://i.icomoon.io/public/temp/85d6e45b83/simplysocial/style.css">-->
 
   <!--[if lt IE 9]>
   <![endif]-->
@@ -27,10 +27,24 @@
   <header>
     <div class="ins-right-position">
       <i class="icon-bubble2" ng-click="showMessageWindow = true"></i>
-      <input class="ins-input" type="text">
+      <input class="ins-input" type="text" />
+      <div class="ins-menu-wrapper">
+        <img src="external/avatars/user-profile.jpg">
+        <i class="icon-circle-down"></i>
+        <div class="ins-menu">
+          <ul>
+            <li>Profile</li>
+            <li>Followers</li>
+            <li>Following</li>
+            <li>
+              <a ui-sref="settings">Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="ins-left-position">
-      <a><img src="images/logo.png"/></a>
+      <a ui-sref="home.feed"><img src="images/logo.png"/></a>
     </div>
   </header>
   <main ui-view>
@@ -51,7 +65,8 @@
 <div class="ins-overlay" ng-show="showMessageWindow" ng-cloak></div>
 <div class="ins-modal" ng-show="showMessageWindow" ng-cloak>
   <h2>Create new message</h2>
-  <textarea  ng-model="newPostOverlay" placeholder="What's on your mind"></textarea>
+  <textarea ng-model="newPostOverlay" placeholder="What's on your mind"></textarea>
+
   <div class="ins-actions">
     <div class="ins-left-position">
       <a>

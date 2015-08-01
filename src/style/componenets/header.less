@@ -20,9 +20,64 @@
     .ins-right-position {
       position: absolute;
       height: @header-input-height;
-      right: 10px;
+      right: 50px;
       top: 50%;
       margin-top: -1*@header-input-height/2;
+
+      .ins-menu-wrapper {
+        display: inline-block;
+        padding-bottom: 20px;
+        &:hover {
+          .ins-menu {
+            display: block;
+          }
+        }
+        .ins-menu {
+          display: none;
+          position: absolute;
+          right: -10px;
+          width: 100px;
+          height: 125px;
+          background-color: @grey-light;
+          border: 1px solid @grey;
+          border-radius: 3px;
+          z-index: @header-z-index;
+
+          &::before {
+            border: 6px solid transparent;
+            border-bottom-color: @grey;
+            margin-left: -4px;
+            bottom: 100%;
+            right: 10px;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+          }
+
+          li {
+            padding-top: 6px;
+            padding-bottom: 6px;
+            padding-left: 18px;
+            width: 100%;
+            border-bottom: 2px solid @grey;
+            &:last-of-type {
+              border-bottom: 0;
+            }
+
+            a {
+              text-decoration: none;
+              color: @main;
+            }
+          }
+        }
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+        .lh-border-radius(3px)
+      }
 
       input {
         height: 100%;
@@ -30,12 +85,19 @@
         .lh-border-radius(4px);
         padding: 2px 34px 0 4px;
         width: 200px;
+        vertical-align: top;
         border: 1px solid #44474b;
       }
 
       i.icon-bubble2 {
         color: @green;
-        font-size: 25px;
+        font-size: 32px;
+        vertical-align: top;
+      }
+
+      i.icon-circle-down {
+        bottom: 10px;
+        position: relative;
       }
     }
 
