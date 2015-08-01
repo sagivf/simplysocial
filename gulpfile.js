@@ -4,13 +4,18 @@ var gulp = require('gulp'),
     less = require('gulp-less'),
     jade = require('gulp-jade'),
     webserver = require('gulp-webserver'),
-    templateCache = require("gulp-angular-templatecache");
+    ts = require('gulp-typescript'),
+    templateCache = require("gulp-angular-templatecache"),
+    browserify = require('browserify'),
+    source = require('vinyl-source-stream');
+
 
 require("gulp-help")(gulp);
 
 var dest = path.join('dist'),
     jadeFiles = path.join('templates', '**', '*.jade'),
-    lessFiles = path.join('style', 'ins.less'),
+    lessFile = path.join('style', 'style.less'),
+    lessFiles = path.join('style', '**', '*.less'),
     imageFiles = path.join('style', 'images', '*.*'),
     bowerFiles = [
       'ui-router/release/angular-ui-router.min.js',
@@ -18,7 +23,7 @@ var dest = path.join('dist'),
         return path.join('bower_components', file);
       });
 
-gulp.task("build", "Create build resources", ["build:less", "build:templates"], function(){
+gulp.task("build", "Create build resources", ["build:less", "build:templates", "build:scripts"], function(){
   gulp.src(imageFiles)
       .pipe(gulp.dest(path.join('dist', 'images')));
 
@@ -27,7 +32,7 @@ gulp.task("build", "Create build resources", ["build:less", "build:templates"], 
 });
 
 gulp.task("build:less", "Create css from less", false, function () {
-  gulp.src(lessFiles)
+  gulp.src(lessFile)
       .pipe(less())
       .on('error', function (err) {
         console.log(err.message);
@@ -45,6 +50,26 @@ gulp.task("build:templates", "Create html templateCache from jade", false, funct
       root: 'templates-cache/'
     }))
     .pipe(rename('templates.js'))
+    .pipe(gulp.dest(dest));
+});
+
+gulp.task('build:tsc', function () {
+  var tsResult = gulp.src('src/**/*.ts')
+    .pipe(ts({
+      target: 'ES3',
+      module: 'commonjs',
+      sortOutput: true,
+      removeComments : true
+    }));
+
+  return tsResult.js.pipe(gulp.dest('./temp/source'));
+});
+
+gulp.task('build:scripts', false, ["build:tsc"], function () {
+
+  return browserify('./temp/source/app.js')
+    .bundle()
+    .pipe(source('app.js'))
     .pipe(gulp.dest(dest));
 });
 
