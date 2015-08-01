@@ -15,6 +15,10 @@
   ],
   "dependencies": {
     "ui-router": "~0.2.15",
+    "angular": "~1.4.3",
+    "angular-deckgrid": "~0.5.0"
+  },
+  "resolutions": {
     "angular": "~1.4.3"
   }
 }
