@@ -1,5 +1,9 @@
 export default function ($stateProvider) {
-  function setPosts(posts, masonary){
+  function setPosts($rootScope, posts, masonary){
+    $rootScope.$on('feed:add', (event, post) => {
+      this.posts.unshift(post);
+    });
+
     this.masonary = masonary;
     this.posts = posts;
   };
@@ -10,7 +14,7 @@ export default function ($stateProvider) {
       views: {
         'navigation': {
           templateUrl: 'templates-cache/feed/navigation.html',
-          controller: function(feed, $timeout){
+          controller: function($rootScope, feed, $timeout){
             this.keyDown = function(event){
               if (event.keyCode == 13){
                 feed.add({
@@ -41,8 +45,10 @@ export default function ($stateProvider) {
           controller: setPosts,
           controllerAs: 'content',
           resolve: {
-            posts: function(feed){
-              return feed.fetch();
+            posts: function(feed, user){
+              return feed.fetch({
+                feed: user.fetch().name
+              });
             },
             masonary: function($stateParams){
               return $stateParams.masonary;
@@ -60,7 +66,9 @@ export default function ($stateProvider) {
           controllerAs: 'content',
           resolve: {
             posts: function(feed){
-              return feed.fetch('photos');
+              return feed.fetch({
+                type: 'photo'
+              });
             },
             masonary: function(){
               return 'yes';

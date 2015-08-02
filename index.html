@@ -4,10 +4,13 @@
   <title>Simply Social</title>
   <link rel="icon" type="image/ico" href="/favicon.png"/>
 
+  <!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.js"></script>
+  <![endif]-->
+
   <!-- Custom webfonts -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400,300' rel='stylesheet' type='text/css'>
-  <!--<link type="text/css" rel="stylesheet" href="fonts/icomoon/style.css">-->
-  <link rel="stylesheet" href="https://i.icomoon.io/public/temp/24cf372465/simplysocial/style.css">
+  <link type="text/css" rel="stylesheet" href="fonts/icomoon/style.css">
 
   <link type="text/css" rel="stylesheet" href="dist/style.css">
 
@@ -17,17 +20,17 @@
   <script src="dist/bower/moment.min.js"></script>
   <script src="dist/bower/angular-moment.min.js"></script>
   <script src="dist/bower/elastic.js" type="text/javascript"></script>
-  <!--<script src="bower_components/angular-deckgrid/angular-deckgrid.js" type="text/javascript"></script>-->
 </head>
 <body ng-app="ins">
 <div class="ins-page-wrap">
   <header>
     <div class="ins-right-position">
-      <i class="icon-bubble2" ng-click="showMessageWindow = true"></i>
+      <i class="image-bubble" ng-click="showMessageWindow = true"></i>
       <input class="ins-input" type="text" />
+      <i class="icon-search"></i>
       <div class="ins-menu-wrapper">
         <img src="external/avatars/user-profile.jpg">
-        <i class="icon-circle-down"></i>
+        <i class="icon-triangle-down"></i>
         <div class="ins-menu">
           <ul>
             <li>
@@ -68,18 +71,18 @@
 <div class="ins-overlay" ng-show="showMessageWindow" ng-cloak></div>
 <div class="ins-modal" ng-show="showMessageWindow" ng-cloak>
   <h2>Create new message</h2>
-  <textarea ng-model="newPostOverlay" placeholder="What's on your mind"></textarea>
+  <textarea ng-model="newPostOverlay"></textarea>
 
   <div class="ins-actions">
     <div class="ins-left-position">
       <a>
-        <span class="icon icon-camera-active"></span>Add Photo
+        <i class="icon-camera"></i>Add Photo
       </a>
       <a>
-        <span class="icon icon-video-active"></span>Add Video
+        <i class="icon-video"></i>Add Video
       </a>
     </div>
-    <button type="submit" class="ins-button">Post</button>
+    <button ng-click="addPost()" class="ins-button">Post</button>
   </div>
   <i class="icon-cancel-circle" ng-click="showMessageWindow = false"></i>
 </div>

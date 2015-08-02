@@ -1,25 +1,26 @@
-article(ng-repeat="post in content.posts")
-  .ins-body
-    img(ng-src="external/avatars/{{post.userImage}}")
-    div.ins-details
-      h3 {{post.name}}
-      div.ins-actions
-        i.icon-new-tab
-        i.icon-heart
-        span(am-time-ago="post.time")
-      p(ng-bind-html='post.text')
-      div.ins-expand(ng-if="post.comments.length")
-        a(ng-click="post.expanded = !post.expanded")
-          | {{ post.expanded ? 'collapse' : 'expand' }}
-          i.icon-circle-down
-  div(ng-show="post.expanded").ins-comments
-    ul
-      li(ng-repeat="comment in post.comments")
-        .ins-body
-          img(ng-src="external/avatars/{{comment.userImage}}")
-          div.ins-details
-            h3 {{comment.name}}
-            p(ng-bind-html='comment.text')
-    .ins-respond
-      input(type="text", placeholder="")
-  img(ng-if="post.image", ng-src="external/posts/{{post.image}}")
+div
+  article(ng-repeat="post in content.posts")
+    .ins-actions
+      i.icon-new-tab
+      i.icon-heart
+      span(am-time-ago="post.time")
+    .ins-body
+      img(ng-src="external/avatars/{{post.userImage}}")
+      div.ins-details
+        h3 {{post.name}}
+        p(ng-bind-html='post.text')
+        div.ins-expand(ng-if="post.comments.length")
+          a(ng-click="post.expanded = !post.expanded")
+            | {{ post.expanded ? 'collapse' : 'expand' }}
+            i.icon-circle-down
+    div(ng-show="post.expanded").ins-comments
+      ul
+        li(ng-repeat="comment in post.comments")
+          .ins-body
+            img(ng-src="external/avatars/{{comment.userImage}}")
+            div.ins-details
+              h3 {{comment.name}}
+              p(ng-bind-html='comment.text')
+      .ins-respond
+        input(type="text", placeholder="")
+    img(ng-if="post.image", ng-src="external/posts/{{post.image}}")

@@ -16,7 +16,9 @@
       position: absolute;
       right: 15px;
       top: 15px;
+      color: @grey-dark;
       i {
+        font-size: 0.8em;
         margin-right: 10px;
       }
     }
@@ -48,21 +50,32 @@
       }
 
       .ins-expand {
-        margin: 10px 0 20px 0;
+        margin-bottom: 10px;
+        a {
+          cursor: pointer;
+          i {
+            position: relative;
+            top: 2px;
+            left: 3px;
+          }
+        }
       }
     }
 
     > img {
-      margin-top: 20px;
       width: 100%;
       position: relative;
       bottom: -8px;
     }
 
     .ins-comments {
-      background: @grey-light;
+      background: @grey-lightest;
       li {
         border-bottom: 1px solid @grey;
+        &:first-child {
+          border-top: 1px solid @grey;
+        }
+
       }
 
       .ins-respond {
@@ -76,11 +89,19 @@
     }
   }
 
-  @media only screen and (max-width: @tablet-width) {
+  .ins-masonary {
     article {
+      .ins-body .ins-expand {
+      }
+
+      > img {
+        margin-bottom: 20px;
+      }
+      padding-bottom: 40px;
       .ins-actions {
-        right: -20px;
-        bottom: 0;
+        right: 20px;
+        top: auto;
+        bottom: 20px;
       }
     }
   }

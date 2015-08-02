@@ -1,7 +1,7 @@
 div(ng-class="{ 'ins-masonary': content.masonary === 'yes' }")
   article.ins-masonary-item(ng-repeat="post in content.posts")
-    div.ins-actions
-      i.icon-new-tab
+    .ins-actions
+      i.icon-undo
       i.icon-heart
       span(am-time-ago="post.time")
     .ins-body
@@ -12,7 +12,7 @@ div(ng-class="{ 'ins-masonary': content.masonary === 'yes' }")
         div.ins-expand(ng-if="post.comments.length")
           a(ng-click="post.expanded = !post.expanded")
             | {{ post.expanded ? 'collapse' : 'expand' }}
-            i.icon-circle-down
+            i.icon-triangle-down
     div(ng-show="post.expanded").ins-comments
       ul
         li(ng-repeat="comment in post.comments")
@@ -22,5 +22,5 @@ div(ng-class="{ 'ins-masonary': content.masonary === 'yes' }")
               h3 {{comment.name}}
               p(ng-bind-html='comment.text')
       .ins-respond
-        input(type="text", placeholder="")
+        input(type="text", placeholder="Reply...")
     img(ng-if="post.image", ng-src="external/posts/{{post.image}}")

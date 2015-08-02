@@ -5,12 +5,12 @@ form.ins-create-post
       i.icon-camera
       | Add Photo
     a
-      i.icon-video-camera
+      i.icon-video
       | Add Video
     a
-nav
+nav.ins-nav
   ul
-    li(ui-sref="home.feed.all({masonary: 'no'})", ui-sref-active="ins-selected")
+    li(ui-sref="home.feed.all({masonary: 'no'})",  ng-class="{ 'ins-selected': state.name === 'home.feed.all' }")
       a All Posts
     li(ui-sref="home.feed.photos", ui-sref-active="ins-selected")
       a Photos
@@ -18,6 +18,6 @@ nav
       a Videos
     li.ins-spacer
     li.ins-right-align(ui-sref="home.feed.all({masonary: 'no'})", ui-sref-active="ins-selected")
-      i.icon-menu
+      i.icon-three-bars
     li.ins-right-align(ui-sref="home.feed.all({masonary: 'yes'})", ui-sref-active="ins-selected")
-      i.icon-list
+      i.icon-grid

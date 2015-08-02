@@ -39,7 +39,7 @@
 
       .ins-inputs-section {
         display: inline-block;
-        width: calc(~"100% - 350px");
+        width: calc(~"100% - 250px");
         max-width: @image-wrapper-width;
         float: left;
         font-size: 24px;
@@ -70,7 +70,7 @@
       margin-top: 20px;
       margin-bottom: 20px;
       border: 0;
-      border-top: 2px solid #eee;
+      border-top: 2px solid @grey;
     }
 
     ul {
@@ -91,6 +91,17 @@
         &:last-of-type {
           padding-left: 30px;
         }
+      }
+    }
+  }
+
+
+  @media only screen and (max-width: @mobile-width) {
+    .ins-settings-page form.ins-form {
+      .ins-image-section, .ins-inputs-section {
+        width: 100%;
+        padding: 10px 20px;
+        max-width: none;
       }
     }
   }

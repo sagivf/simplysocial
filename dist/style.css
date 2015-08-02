@@ -30,6 +30,13 @@ body {
 a {
   color: #cccccc;
 }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: ProximaNova-bold;
+}
 ul {
   padding: 0;
   margin: 0;
@@ -160,7 +167,7 @@ header {
   height: 60px;
   width: 100%;
   z-index: 1;
-  background: #000000;
+  background: #262728;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   -webkit-transition: background .2s;
 }
@@ -184,14 +191,14 @@ header .ins-right-position .ins-menu-wrapper .ins-menu {
   right: -10px;
   width: 100px;
   height: 125px;
-  background-color: #f5f5f5;
-  border: 1px solid #e4e6ea;
+  background-color: #e4e6ea;
+  border: 1px solid #dee1e5;
   border-radius: 3px;
   z-index: 1;
 }
 header .ins-right-position .ins-menu-wrapper .ins-menu::before {
   border: 6px solid transparent;
-  border-bottom-color: #e4e6ea;
+  border-bottom-color: #dee1e5;
   margin-left: -4px;
   bottom: 100%;
   right: 10px;
@@ -205,7 +212,7 @@ header .ins-right-position .ins-menu-wrapper .ins-menu li {
   padding-bottom: 6px;
   padding-left: 18px;
   width: 100%;
-  border-bottom: 2px solid #e4e6ea;
+  border-bottom: 2px solid #dee1e5;
 }
 header .ins-right-position .ins-menu-wrapper .ins-menu li:last-of-type {
   border-bottom: 0;
@@ -236,15 +243,26 @@ header .ins-right-position input {
   padding: 2px 34px 0 4px;
   width: 200px;
   vertical-align: top;
+  margin-right: 20px;
   border: 1px solid #44474b;
 }
-header .ins-right-position i.icon-bubble2 {
-  color: #00b286;
-  font-size: 32px;
-  vertical-align: top;
+header .ins-right-position i.icon-search {
+  position: absolute;
+  top: 7px;
+  right: 80px;
+  font-size: 1.2em;
 }
-header .ins-right-position i.icon-circle-down {
+header .ins-right-position i.image-bubble {
+  cursor: pointer;
+  height: 28px;
+  width: 31px;
+  display: inline-block;
+  margin-right: 20px;
+  background: url(../images/add.png);
+}
+header .ins-right-position i.icon-triangle-down {
   bottom: 10px;
+  margin-left: 5px;
   position: relative;
 }
 header .ins-left-position {
@@ -267,7 +285,7 @@ header .ins-left-position img {
   opacity: 0.7;
 }
 .ins-create-post textarea {
-  font-size: 30px;
+  font-size: 2.8em;
   height: 50px;
   resize: none;
   width: 100%;
@@ -278,8 +296,22 @@ header .ins-left-position img {
   color: white;
   outline: none;
 }
+.ins-create-post textarea::-webkit-input-placeholder {
+  color: white;
+}
+.ins-create-post textarea:-moz-placeholder {
+  color: white;
+}
+.ins-create-post textarea::-moz-placeholder {
+  color: white;
+}
+.ins-create-post textarea:-ms-input-placeholder {
+  color: white;
+}
 .ins-create-post a {
-  margin-right: 10px;
+  font-size: 1.2em;
+  margin-right: 30px;
+  color: white;
 }
 .ins-create-post i {
   margin-right: 5px;
@@ -299,12 +331,12 @@ header .ins-left-position img {
   left: 30%;
   right: 30%;
   border-radius: 3px;
-  background: #f5f5f5;
+  background: #dee1e5;
   padding: 10px 25px;
 }
 .ins-modal .ins-actions {
   position: relative;
-  height: 50px;
+  height: 40px;
 }
 .ins-modal .ins-actions .ins-left-position {
   position: absolute;
@@ -323,14 +355,27 @@ header .ins-left-position img {
   background-image: none;
   float: right;
 }
+.ins-modal .ins-actions a {
+  font-size: 1.2em;
+  color: #a9a9a9;
+  margin-right: 10px;
+  display: inline-block;
+}
+.ins-modal .ins-actions a i {
+  margin-right: 5px;
+}
 .ins-modal h2 {
   color: #70767f;
-  font-size: 16px;
+  font-size: 1.5em;
+  margin-bottom: 5px;
 }
 .ins-modal textarea {
   border: 0;
+  padding: 10px;
+  font-size: 2em;
   width: 100%;
-  height: 100px;
+  height: 110px;
+  margin: 0;
   resize: none;
 }
 .ins-overlay {
@@ -437,17 +482,26 @@ main nav ul li.ins-right-align.ins-selected {
 .x-ng-cloak {
   display: none !important;
 }
+nav.ins-nav li.ins-right-align {
+  width: 30px;
+}
+nav.ins-nav li.ins-right-align i {
+  font-size: 1.2em;
+}
+nav.ins-nav li.ins-right-align i.icon-grid {
+  font-size: 1.5em;
+}
 .ins-masonary {
   -webkit-column-count: 3;
   -moz-column-count: 3;
   column-count: 3;
-  -webkit-column-gap: 1em;
-  -moz-column-gap: 1em;
-  column-gap: 1em;
+  -webkit-column-gap: 1.8em;
+  -moz-column-gap: 1.8em;
+  column-gap: 1.8em;
 }
 .ins-masonary .ins-masonary-item {
   display: inline-block;
-  margin: 0 0 1em;
+  margin: 0 0 1.8em;
   width: 100%;
 }
 .ins-content-section > div:not(.ins-masonary) {
@@ -473,6 +527,12 @@ main nav ul li.ins-right-align.ins-selected {
   display: block;
   height: 40px;
 }
+.ins-tbd {
+  font-size: 3em;
+  color: #00b286;
+  text-transform: uppercase;
+  text-align: center;
+}
 @media only screen and (max-width: 1000px) {
   .ins-masonary {
     -webkit-column-count: 2;
@@ -484,7 +544,7 @@ main nav ul li.ins-right-align.ins-selected {
   }
   .ins-masonary .ins-masonary-item {
     display: inline-block;
-    margin: 0 0 1em;
+    margin: 0 0 0.8em;
     width: 100%;
   }
   .ins-content-section > div.ins-masonary {
@@ -498,13 +558,13 @@ main nav ul li.ins-right-align.ins-selected {
     -webkit-column-count: 1;
     -moz-column-count: 1;
     column-count: 1;
-    -webkit-column-gap: 0.5em;
-    -moz-column-gap: 0.5em;
-    column-gap: 0.5em;
+    -webkit-column-gap: 1.4em;
+    -moz-column-gap: 1.4em;
+    column-gap: 1.4em;
   }
   .ins-masonary .ins-masonary-item {
     display: inline-block;
-    margin: 0 0 1em;
+    margin: 0 0 1.4em;
     width: 100%;
   }
   .ins-content-section > div.ins-masonary {
@@ -541,7 +601,7 @@ main nav ul li.ins-right-align.ins-selected {
 }
 .ins-settings-page form.ins-form .ins-inputs-section {
   display: inline-block;
-  width: calc(100% - 350px);
+  width: calc(100% - 250px);
   max-width: 250px;
   float: left;
   font-size: 24px;
@@ -568,7 +628,7 @@ main nav ul li.ins-right-align.ins-selected {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 2px solid #eee;
+  border-top: 2px solid #e4e6ea;
 }
 .ins-settings-page ul {
   margin-bottom: 50px;
@@ -585,6 +645,14 @@ main nav ul li.ins-right-align.ins-selected {
 }
 .ins-settings-page li label:last-of-type {
   padding-left: 30px;
+}
+@media only screen and (max-width: 576px) {
+  .ins-settings-page form.ins-form .ins-image-section,
+  .ins-settings-page form.ins-form .ins-inputs-section {
+    width: 100%;
+    padding: 10px 20px;
+    max-width: none;
+  }
 }
 article {
   font-size: 16px;
@@ -605,8 +673,10 @@ article .ins-actions {
   position: absolute;
   right: 15px;
   top: 15px;
+  color: #a9a9a9;
 }
 article .ins-actions i {
+  font-size: 0.8em;
   margin-right: 10px;
 }
 article .ins-body {
@@ -634,10 +704,17 @@ article .ins-body .ins-details p a {
   word-break: normal;
 }
 article .ins-body .ins-expand {
-  margin: 10px 0 20px 0;
+  margin-bottom: 10px;
+}
+article .ins-body .ins-expand a {
+  cursor: pointer;
+}
+article .ins-body .ins-expand a i {
+  position: relative;
+  top: 2px;
+  left: 3px;
 }
 article > img {
-  margin-top: 20px;
   width: 100%;
   position: relative;
   bottom: -8px;
@@ -648,6 +725,9 @@ article .ins-comments {
 article .ins-comments li {
   border-bottom: 1px solid #e4e6ea;
 }
+article .ins-comments li:first-child {
+  border-top: 1px solid #e4e6ea;
+}
 article .ins-comments .ins-respond {
   padding: 10px;
 }
@@ -656,9 +736,32 @@ article .ins-comments .ins-respond input {
   width: 100%;
   padding: 10px;
 }
-@media only screen and (max-width: 1000px) {
-  article .ins-actions {
-    right: -20px;
-    bottom: 0;
-  }
+.ins-masonary article {
+  padding-bottom: 40px;
+}
+.ins-masonary article > img {
+  margin-bottom: 20px;
+}
+.ins-masonary article .ins-actions {
+  right: 20px;
+  top: auto;
+  bottom: 20px;
+}
+.ins-user-profile {
+  text-align: center;
+  font-weight: 300;
+  color: white;
+}
+.ins-user-profile h2 {
+  font-size: 2.5em;
+  margin: 10px 0 0;
+}
+.ins-user-profile p {
+  opacity: 0.8;
+  font-size: 1.2em;
+  margin: 15px 0 5px;
+}
+.ins-user-profile a {
+  color: #262728;
+  font-size: 1.1em;
 }

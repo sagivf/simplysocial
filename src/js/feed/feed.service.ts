@@ -2,7 +2,7 @@ export default class FeedService {
 
   posts: Array<any>;
 
-  constructor(private $sce, private moment) {
+  constructor(private $sce, private moment, private $rootScope) {
     this.posts = [
       {
         name: 'Sam Soffes',
@@ -51,58 +51,38 @@ export default class FeedService {
       },
       {
         name: 'Pallavi Gupta',
-        //userImage: 'meg-robichaud.png',
-        //text: this.$sce.trustAsHtml('You have to see this bike. It will make your daily commute a absolute joy ride! <a>vimeo.com/p/mV0PUrHRwQ/</a>'),
-        //time: moment().add(-25, 'minutes'),
-        //image: 'post1.jpg',
-        //comments: []
+        userImage: 'marco.jpg',
+        text: this.$sce.trustAsHtml('You have to see this bike. It will make your daily commute a absolute joy ride! <a>vimeo.com/p/mV0PUrHRwQ/</a>'),
+        time: moment().add(-25, 'minutes'),
+        comments: []
       },
       {
         name: 'Jenny Shen',
-        userImage: 'meg-robichaud.png',
+        userImage: 'jenny.jpg',
         text: this.$sce.trustAsHtml('Perfect day to be taking pictures <a>instagram.com/p/mV0PUrHRwQ/</a>'),
-        time: moment().add(-25, 'minutes'),
-        image: 'jenny.jpg',
+        time: moment().add(-1, 'hour'),
         comments: []
       },
       {
         name: 'Jonathan Moreira',
-        userImage: 'meg-robichaud.png',
-        text: this.$sce.trustAsHtml('wwwww'),
-        time: moment().add(-25, 'minutes'),
+        userImage: 'jonathan.jpg',
+        text: this.$sce.trustAsHtml('Thoughtful brand desicion vs, emotional brand desicion. <a>ow.ly/vtT2i</a>'),
+        time: moment().add(-1, 'hour'),
         comments: []
       },
       {
         name: 'Jon Brennan',
-        userImage: 'meg-robichaud.png',
-        text: this.$sce.trustAsHtml('wwww'),
-        time: moment().add(-25, 'minutes'),
-        comments: []
-      },
-      {
-        name: 'Michael Wong',
-        userImage: 'meg-robichaud.png',
-        text: this.$sce.trustAsHtml('wwww'),
-        time: moment().add(-25, 'minutes'),
-        comments: []
-      }, {
-        name: 'Ed Wellbrook',
-        userImage: 'meg-robichaud.png',
-        text: this.$sce.trustAsHtml('ggggg'),
-        time: moment().add(-25, 'minutes'),
-        comments: []
-      }, {
-        name: 'Ignacio Giri',
-        userImage: 'meg-robichaud.png',
-        text: this.$sce.trustAsHtml('Sponsor // Bootstrap Responsive Templates <a></a>'),
+        userImage: 'jed.jpg',
+        text: this.$sce.trustAsHtml('Had some time to play with the interactive portion of inDesignCC <a>bit.il/1lE5QD</a>'),
         time: moment().add(-25, 'minutes'),
         comments: []
       },
       {
         name: 'Lauren Gray',
-        userImage: 'meg-robichaud.png',
+        userImage: 'lauren.jpg',
         text: this.$sce.trustAsHtml('7 Servings of Type For a Healthy Head & Body'),
         time: moment().add(-25, 'minutes'),
+        image: 'lauren.jpg',
         comments: []
       },
       {
@@ -118,7 +98,7 @@ export default class FeedService {
         userImage: 'buzz.jpg',
         text: this.$sce.trustAsHtml('Deal with your problems before they deal with yor happiness'),
         time: moment().add(-2, 'hours'),
-        image: 'buzz.jpg',
+        image: 'chloe.jpg',
         comments: []
       },
       {
@@ -126,12 +106,34 @@ export default class FeedService {
         userImage: 'buzz.jpg',
         text: this.$sce.trustAsHtml('Excited about <a>@99U</a> Conf lineup this year <a>Conference.99u.com</a>'),
         time: moment().add(-1, 'hours'),
-        image: 'buzz.jpg',
+        image: 'marco.jpg',
         comments: []
       },
       {
         name: 'Samihah Azim',
-        userImage: 'buzz.jpg',
+        userImage: 'samihah.jpg',
+        text: this.$sce.trustAsHtml('Love this picture <a>instegram.com/p/mVOPUrHRwQ/</a>'),
+        time: moment().add(-25, 'minutes'),
+        image: 'lindsey.jpg',
+        comments: []
+      },
+      {
+        name: 'Jessica Tuan',
+        userImage: 'user-profile.jpg',
+        text: this.$sce.trustAsHtml('Love this picture <a>instegram.com/p/mVOPUrHRwQ/</a>'),
+        time: moment().add(-25, 'minutes'),
+        comments: []
+      },
+      {
+        name: 'Jessica Tuan',
+        userImage: 'user-profile.jpg',
+        text: this.$sce.trustAsHtml('Love this picture <a>instegram.com/p/mVOPUrHRwQ/</a>'),
+        time: moment().add(-25, 'minutes'),
+        comments: []
+      },
+      {
+        name: 'Jessica Tuan',
+        userImage: 'user-profile.jpg',
         text: this.$sce.trustAsHtml('Love this picture <a>instegram.com/p/mVOPUrHRwQ/</a>'),
         time: moment().add(-25, 'minutes'),
         image: 'buzz.jpg',
@@ -143,12 +145,23 @@ export default class FeedService {
   add(post) {
     post.text = this.$sce.trustAsHtml(post.text);
     this.posts.unshift(post);
+    this.$rootScope.$emit('feed:add', post);
   }
 
   fetch(filter) {
     var posts = this.posts;
 
-    if(filter === 'photos'){
+    if(filter.feed){
+      posts = posts.filter((post) => {
+        return post.name !== filter.feed;
+      });
+    }
+    if(filter.name){
+      posts = posts.filter((post) => {
+        return post.name === filter.name;
+      });
+    }
+    if(filter.type === 'photo'){
       posts = posts.filter((post) => {
         return !!post.image;
       });

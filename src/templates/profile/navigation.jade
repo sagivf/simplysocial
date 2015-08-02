@@ -1,9 +1,13 @@
-form
+div.ins-user-profile
+  img(src="external/avatars/user-profile.jpg")
+  h2 {{navigation.user.name}}
+  p {{navigation.user.description}}
+  a {{navigation.user.site}}
 nav
   ul
     li(ui-sref="home.profile.me", ui-sref-active="ins-selected")
-      a Jessica Feed
+      a {{navigation.user.firstName}}'s Feed
     li(ui-sref="home.profile.followers", ui-sref-active="ins-selected")
-      a Followers
+      a {{navigation.user.followers | number}} Followers
     li(ui-sref="home.profile.following", ui-sref-active="ins-selected")
-      a Following
+      a {{navigation.user.following | number}} Following

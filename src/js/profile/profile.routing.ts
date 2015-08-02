@@ -1,10 +1,18 @@
 export default function ($stateProvider) {
+  function setPosts(posts){
+    this.posts = posts;
+  };
+
   $stateProvider
     .state('home.profile', {
       url: '/profile',
       views: {
         'navigation': {
-          templateUrl: 'templates-cache/profile/navigation.html'
+          templateUrl: 'templates-cache/profile/navigation.html',
+          controller: function(user){
+            this.user = user.fetch();
+          },
+          controllerAs: 'navigation'
         }
       }
     })
@@ -12,7 +20,16 @@ export default function ($stateProvider) {
       url: '/me',
       views: {
         'content@home': {
-          templateUrl: 'templates-cache/profile/content.html'
+          templateUrl: 'templates-cache/profile/content.html',
+          controller: setPosts,
+          controllerAs: 'content',
+          resolve: {
+            posts: function(feed, user){
+              return feed.fetch({
+                name: user.fetch().name
+              });
+            }
+          }
         }
       }
     })
@@ -20,7 +37,7 @@ export default function ($stateProvider) {
       url: '/followers',
       views: {
         'content@home': {
-          templateUrl: 'templates-cache/profile/content.html'
+          template: '<div class="ins-tbd">Under Construction</div>'
         }
       }
     })
@@ -28,7 +45,7 @@ export default function ($stateProvider) {
       url: '/following',
       views: {
         'content@home': {
-          templateUrl: 'templates-cache/profile/content.html'
+          template: '<div class="ins-tbd">Under Construction</div>'
         }
       }
     });

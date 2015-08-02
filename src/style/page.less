@@ -7,12 +7,25 @@
     display: none !important;
   }
 
+  nav.ins-nav {
+    li.ins-right-align {
+      width: 30px;
+      i {
+        font-size: 1.2em;
+
+        &.icon-grid {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+
   .ins-masonary {
     .lh-column-count(3);
-    .lh-column-gap(1em);
+    .lh-column-gap(1.8em);
     .ins-masonary-item {
       display: inline-block;
-      margin: 0 0 1em;
+      margin: 0 0 1.8em;
       width: 100%;
     }
   }
@@ -45,6 +58,13 @@
     }
   }
 
+  .ins-tbd {
+    font-size: 3em;
+    color: @green;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
   @media only screen and (max-width: @tablet-width) {
 
     .ins-masonary {
@@ -52,7 +72,7 @@
       .lh-column-gap(0.8em);
       .ins-masonary-item {
         display: inline-block;
-        margin: 0 0 1em;
+        margin: 0 0 0.8em;
         width: 100%;
       }
     }
@@ -64,16 +84,14 @@
     }
   }
 
-
-
   @media only screen and (max-width: @mobile-width) {
 
     .ins-masonary {
       .lh-column-count(1);
-      .lh-column-gap(0.5em);
+      .lh-column-gap(1.4em);
       .ins-masonary-item {
         display: inline-block;
-        margin: 0 0 1em;
+        margin: 0 0 1.4em;
         width: 100%;
       }
     }
@@ -88,4 +106,5 @@
 
   @import "pages/settings";
   @import "pages/feed";
+  @import "pages/profile";
 }

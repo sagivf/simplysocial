@@ -1,6 +1,7 @@
 & {
   @import (multiple, reference) "../colors";
   @import (multiple, reference) "../sizes";
+  @import (multiple, reference) "../../../node_modules/lesshat/build/lesshat-prefixed";
 
   .ins-create-post {
     margin: auto auto;
@@ -11,7 +12,8 @@
     border-radius: 3px;
     opacity: 0.7;
     textarea {
-      font-size: 30px;
+      .lh-placeholder(@white);
+      font-size: 2.8em;
       height: 50px;
       resize: none;
       width: 100%;
@@ -24,7 +26,9 @@
     }
 
     a {
-      margin-right: 10px;
+      font-size: 1.2em;
+      margin-right: 30px;
+      color: @white;
     }
 
     i {
