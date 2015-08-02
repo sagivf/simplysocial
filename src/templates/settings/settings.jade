@@ -1,63 +1,82 @@
 .ins-settings-page
   .ins-content-section
-    h1 Settings
-    h2 Account
-    form.ins-form
-      .ins-image-section
-        img(src="external/avatars/user-profile.jpg")
-        button.ins-button Change
-      .ins-inputs-section
-        div.ins-input-image
-          i.icon-envelop
-          input.ins-input
-        div.ins-input-image
-          i.icon-envelop
-          input(type="email").ins-input
-        div.ins-input-image
-          i.icon-envelop
-          input(type="password").ins-input
-    hr
-    h2 Notifications
-    div.switch
+    div
+      h1 Settings
+      h2 Account
+      form.ins-form
+        .ins-image-section
+          img(src="external/avatars/user-profile.jpg")
+          button.ins-button Change
+        .ins-inputs-section
+          div.ins-input-image
+            i.icon-envelop
+            input.ins-input
+          div.ins-input-image
+            i.icon-envelop
+            input(type="email").ins-input
+          div.ins-input-image
+            i.icon-envelop
+            input(type="password").ins-input
+      hr
+      h2 Notifications
 
-    ul
-      li.ins-switch
-        input(id="ins-toggle-1", type="checkbox").ins-toggle.ins-toggle-round-flat
-        label(for="ins-toggle-1")
-        label(for="ins-toggle-1") email me when my posts are marked as favorites
-      li.ins-switch
-        input(id="ins-toggle-2", type="checkbox").ins-toggle.ins-toggle-round-flat
-        label(for="ins-toggle-2")
-        label(for="ins-toggle-2") email me when I'm mentioned
-      li
-        input(id="ins-toggle-3", type="checkbox").ins-toggle.ins-toggle-round-flat
-        label(for="ins-toggle-3")
-        label(for="ins-toggle-3") email me when I get a reply
-      li
-        input(id="ins-toggle-4", type="checkbox").ins-toggle.ins-toggle-round-flat
-        label(for="ins-toggle-4")
-        label(for="ins-toggle-4") email me when someone follows me
-    hr
-    h2 Privacy
-    ul
-      li
-        input(id="ins-toggle-2", type="radio", name="allow-radio")
-        label allow anyone to tag me
-      li
-        input(id="ins-toggle-2", type="radio", name="allow-radio")
-        label only allow people I follow to tag me
-      li
-        input(id="ins-toggle-2", type="radio", name="allow-radio")
-        label don't allow anyone to tag me
-    ul
-      li
-        input(id="ins-toggle-2", type="radio")
-        label add a location to my posts
-      li
-        input(id="ins-toggle-2", type="radio")
-        label let other find me by my email address
-      li
-        input(id="ins-toggle-2", type="radio")
-        label tailor ads based on my information
-    hr
-    button.ins-button Save Changes
+      form(name="flags")
+        ul
+          li.ins-switch
+            input(id="ins-toggle-1", type="checkbox").ins-toggle.ins-toggle-round-flat
+            label(for="ins-toggle-1")
+            label(for="ins-toggle-1") email me when my posts are marked as favorites
+          li.ins-switch
+            input(id="ins-toggle-2", type="checkbox").ins-toggle.ins-toggle-round-flat
+            label(for="ins-toggle-2")
+            label(for="ins-toggle-2") email me when I'm mentioned
+          li
+            input(id="ins-toggle-3", type="checkbox").ins-toggle.ins-toggle-round-flat
+            label(for="ins-toggle-3")
+            label(for="ins-toggle-3") email me when I get a reply
+          li
+            input(id="ins-toggle-4", type="checkbox").ins-toggle.ins-toggle-round-flat
+            label(for="ins-toggle-4")
+            label(for="ins-toggle-4") email me when someone follows me
+        hr
+        h2 Privacy
+        ul
+          li
+            input(id="ins-radio-1", type="radio", name="allow-radio", value="anyone", ng-model="allow", style="display: none")
+            label(id="ins-radio-1")
+              i.icon-radio-checked(ng-show="allow === 'anyone'")
+              i.icon-radio-unchecked(ng-show="allow !== 'anyone'")
+            label(for="ins-radio-1") allow anyone to tag me
+          li
+            input(id="ins-radio-2", type="radio", name="allow-radio", value="followers", ng-model="allow", style="display: none")
+            label(id="ins-radio-2")
+              i.icon-radio-checked(ng-show="allow === 'followers'")
+              i.icon-radio-unchecked(ng-show="allow !== 'followers'")
+            label(for="ins-radio-2") only allow people I follow to tag me
+          li
+            input(id="ins-radio-3", type="radio", name="allow-radio", value="none", ng-model="allow", style="display: none")
+            label(id="ins-radio-3")
+              i.icon-radio-checked(ng-show="allow === 'none'")
+              i.icon-radio-unchecked(ng-show="allow !== 'none'")
+            label(for="ins-radio-3") don't allow anyone to tag me
+        ul.ins-separate-radios
+          li
+            input(id="ins-radio-4", type="checkbox", name="location", ng-model="location", style="display: none")
+            label(id="ins-radio-4")
+              i.icon-radio-checked(ng-show="location")
+              i.icon-radio-unchecked(ng-show="!location")
+            label(for="ins-radio-4") add a location to my posts
+          li
+            input(id="ins-radio-5", type="checkbox", name="find", ng-model="find", style="display: none")
+            label(id="ins-radio-5")
+              i.icon-radio-checked(ng-show="find")
+              i.icon-radio-unchecked(ng-show="!find")
+            label(for="ins-radio-5") let other find me by my email address
+          li
+            input(id="ins-radio-6", type="checkbox", name="ads", ng-model="ads", style="display: none")
+            label(id="ins-radio-6")
+              i.icon-radio-checked(ng-show="ads")
+              i.icon-radio-unchecked(ng-show="!ads")
+            label(for="ins-radio-6") tailor ads based on my information
+        hr
+        button.ins-button Save Changes

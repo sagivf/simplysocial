@@ -7,6 +7,8 @@
 
   .ins-settings-page {
 
+    font-size: 15px;
+
     h2 {
       margin-top: 20px;
       font-family: ProximaNova-Bold;
@@ -73,6 +75,12 @@
 
     ul {
       margin-bottom: 50px;
+
+      &.ins-separate-radios{
+       li {
+         margin-top: 10px;
+       }
+      }
     }
 
     li {
@@ -81,22 +89,7 @@
         display: table-cell;
         vertical-align: middle;
         &:last-of-type {
-          padding-left: 40px;
-        }
-      }
-    }
-  }
-
-  @media only screen and (max-width: @mobile-width) {
-    .ins-settings-page {
-      form.ins-form {
-        .ins-image-section {
-          width: 100%;
-        }
-        .ins-inputs-section {
-          width: 100%;
-          padding: 20px;
-          max-width: none;
+          padding-left: 30px;
         }
       }
     }

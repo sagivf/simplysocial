@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-<!--[if lt IE 9]>
-<html class="lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html lang="en"> <!--<![endif]-->
+<html>
 <head>
-  <title>Login</title>
-  <!--<link rel="icon" type="image/ico" href="/favicon.ico"/>-->
+  <title>Simply Social</title>
+  <link rel="icon" type="image/ico" href="/favicon.png"/>
 
   <!-- Custom webfonts -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400,300' rel='stylesheet' type='text/css'>
-  <link type="text/css" rel="stylesheet" href="fonts/icomoon/style.css">
-  <!--<link rel="stylesheet" href="https://i.icomoon.io/public/temp/85d6e45b83/simplysocial/style.css">-->
-
-  <!--[if lt IE 9]>
-  <![endif]-->
+  <!--<link type="text/css" rel="stylesheet" href="fonts/icomoon/style.css">-->
+  <link rel="stylesheet" href="https://i.icomoon.io/public/temp/24cf372465/simplysocial/style.css">
 
   <link type="text/css" rel="stylesheet" href="dist/style.css">
 
@@ -36,9 +30,15 @@
         <i class="icon-circle-down"></i>
         <div class="ins-menu">
           <ul>
-            <li>Profile</li>
-            <li>Followers</li>
-            <li>Following</li>
+            <li>
+              <a ui-sref="home.profile.me">Profile</a>
+            </li>
+            <li>
+              <a ui-sref="home.profile.followers">Followers</a>
+            </li>
+            <li>
+              <a ui-sref="home.profile.following">Following</a>
+            </li>
             <li>
               <a ui-sref="settings">Settings</a>
             </li>
@@ -47,7 +47,7 @@
       </div>
     </div>
     <div class="ins-left-position">
-      <a ui-sref="home.feed"><img src="images/logo.png"/></a>
+      <a ui-sref="home.feed.all"><img src="images/logo.png"/></a>
     </div>
   </header>
   <main ui-view>

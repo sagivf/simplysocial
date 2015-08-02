@@ -21,17 +21,24 @@
         height: 100%;
         top: 0;
         li {
+          cursor: pointer;
           text-align: center;
           display: table-cell;
           vertical-align: middle;
           &.ins-selected {
             border-bottom: 5px solid @green;
+            padding-top: 5px;
           }
           &.ins-spacer {
             width: 150px;
           }
           &.ins-right-align {
             text-align: right;
+            &.ins-selected {
+              border-bottom: 0;
+              padding-top: 0;
+              color: @white;
+            }
           }
         }
       }

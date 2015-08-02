@@ -78,7 +78,7 @@ gulp.task('build:scripts', false, ["build:tsc"], function () {
 gulp.task('watch', "Watch file changes and auto compile for development", function () {
   gulp.watch(jadeFiles, ['build:templates']);
   gulp.watch(lessFiles, ['build:less']);
-  gulp.watch(scriptFiles, ['build:less']);
+  gulp.watch(scriptFiles, ['build:scripts']);
 });
 
 gulp.task('serve', "Serve files after build and watch", ["build", "watch"], function () {

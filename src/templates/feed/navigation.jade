@@ -1,5 +1,5 @@
-.ins-create-post
-  textarea(msd-elastic, ng-model="newPost" ,placeholder="What's on your mind")
+form.ins-create-post
+  textarea(msd-elastic, ng-model="navigation.post" ,placeholder="What's on your mind", ng-keydown="navigation.keyDown($event)")
   div
     a
       i.icon-camera
@@ -10,14 +10,14 @@
     a
 nav
   ul
-    li.ins-selected
+    li(ui-sref="home.feed.all({masonary: 'no'})", ui-sref-active="ins-selected")
       a All Posts
-    li
+    li(ui-sref="home.feed.photos", ui-sref-active="ins-selected")
       a Photos
     li
       a Videos
     li.ins-spacer
-    li.ins-right-align
+    li.ins-right-align(ui-sref="home.feed.all({masonary: 'no'})", ui-sref-active="ins-selected")
       i.icon-menu
-    li.ins-right-align
+    li.ins-right-align(ui-sref="home.feed.all({masonary: 'yes'})", ui-sref-active="ins-selected")
       i.icon-list

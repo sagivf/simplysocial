@@ -1,15 +1,25 @@
 & {
   @import (multiple, reference) "../../../node_modules/lesshat/build/lesshat-prefixed";
   @import (multiple, reference) "../colors";
+  @import (multiple, reference) "../sizes";
 
   article {
     font-size: 16px;
+    position: relative;
     font-family: ProximaNova-Light;
     line-height: 1.125;
     width: 100%;
     border: 1px solid @grey;
     .lh-border-radius(4px);
     margin-bottom: 20px;
+    .ins-actions {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      i {
+        margin-right: 10px;
+      }
+    }
 
     .ins-body {
       padding: 20px 40px 0 80px;
@@ -29,13 +39,10 @@
         }
         p {
           margin-top: 8px;
-        }
-        .ins-actions {
-          position: absolute;
-          right: -20px;
-          top: 0;
-          i {
-            margin-right: 10px;
+          word-break: break-all;
+
+          a {
+            word-break: normal;
           }
         }
       }
@@ -65,6 +72,15 @@
           width: 100%;
           padding: 10px;
         }
+      }
+    }
+  }
+
+  @media only screen and (max-width: @tablet-width) {
+    article {
+      .ins-actions {
+        right: -20px;
+        bottom: 0;
       }
     }
   }

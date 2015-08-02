@@ -1,14 +1,32 @@
 & {
+  @import (multiple, reference) "../../node_modules/lesshat/build/lesshat-prefixed";
+
   @import (multiple, reference) "sizes";
 
   [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
   }
 
-  .ins-content-section {
+  .ins-masonary {
+    .lh-column-count(3);
+    .lh-column-gap(1em);
+    .ins-masonary-item {
+      display: inline-block;
+      margin: 0 0 1em;
+      width: 100%;
+    }
+  }
+
+  .ins-content-section > div:not(.ins-masonary) {
     margin: auto auto;
+    padding: 40px 0;
     max-width: @main-content-width;
-    padding: 20px 0;
+  }
+
+  .ins-content-section > div.ins-masonary {
+    width: calc(~"100% - 200px");
+    padding: 40px 0;
+    margin: auto auto;
   }
 
   .ins-page-wrap {
@@ -26,6 +44,47 @@
       height: @footer-height;
     }
   }
+
+  @media only screen and (max-width: @tablet-width) {
+
+    .ins-masonary {
+      .lh-column-count(2);
+      .lh-column-gap(0.8em);
+      .ins-masonary-item {
+        display: inline-block;
+        margin: 0 0 1em;
+        width: 100%;
+      }
+    }
+
+    .ins-content-section > div.ins-masonary {
+      width: calc(~"100% - 150px");
+      padding: 20px 0;
+      margin: auto auto;
+    }
+  }
+
+
+
+  @media only screen and (max-width: @mobile-width) {
+
+    .ins-masonary {
+      .lh-column-count(1);
+      .lh-column-gap(0.5em);
+      .ins-masonary-item {
+        display: inline-block;
+        margin: 0 0 1em;
+        width: 100%;
+      }
+    }
+
+    .ins-content-section > div.ins-masonary {
+      width: calc(~"100% - 50px");
+      padding: 20px 0;
+      margin: auto auto;
+    }
+  }
+
 
   @import "pages/settings";
   @import "pages/feed";
