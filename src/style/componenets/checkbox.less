@@ -20,10 +20,7 @@
       position: relative;
       cursor: pointer;
       outline: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+      .lh-user-select(none)
     }
   }
 
@@ -35,10 +32,10 @@
     .lh-transition(background 0.4s);
   }
 
-  input.ins-toggle-round-flat + label:before, input.ins-toggle-round-flat + label:after {
+  input.ins-toggle-round-flat + label:before, input.ins-toggle-round-flat + label::after {
     display: block;
     position: absolute;
-    content: "";
+    content: " ";
   }
 
   input.ins-toggle-round-flat {
@@ -52,7 +49,7 @@
       .lh-transition(background 0.4s);
     }
 
-    & + label:after {
+    & + label::after {
       top: 4px;
       left: 4px;
       bottom: 4px;
@@ -68,11 +65,11 @@
       background-color: @grey;
     }
 
-    & + label:after {
+    & + label::after {
       margin-left: @height;
     }
 
-    & + label:before {
+    & + label::before {
       background-color: @grey;
     }
   }

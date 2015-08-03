@@ -16,6 +16,12 @@
     },
     "moment/moment-node.d.ts": {
       "commit": "4df20c9706ce6ca27137617770b57f3a0d3f9689"
+    },
+    "modernizr/modernizr.d.ts": {
+      "commit": "287cb2e1b112bdef6de8de0dd64836583b0c49ea"
+    },
+    "jquery.placeholder/jquery.placeholder.d.ts": {
+      "commit": "287cb2e1b112bdef6de8de0dd64836583b0c49ea"
     }
   }
 }

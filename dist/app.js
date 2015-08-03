@@ -5,10 +5,11 @@ var feed_service_1 = require("./feed/feed.service");
 var user_service_1 = require("./user.service");
 var feed_routing_1 = require("./feed/feed.routing");
 var profile_routing_1 = require("./profile/profile.routing");
+var placeholder_drv_1 = require("./placeholder.drv");
 angular.module('ins', ['ngAnimate', 'ui.router', 'monospaced.elastic', 'angularMoment'])
     .config(function ($stateProvider, $animateProvider, $urlRouterProvider, moment) {
     $animateProvider.classNameFilter(/angular-animate/);
-    moment.lang('en', {
+    moment.locale('en', {
         relativeTime: {
             future: "in %s",
             past: "%s",
@@ -36,6 +37,8 @@ angular.module('ins', ['ngAnimate', 'ui.router', 'monospaced.elastic', 'angularM
     $urlRouterProvider.otherwise('feed/all');
 })
     .config(feed_routing_1["default"])
+    .directive("insPlaceholder", placeholder_drv_1["default"])
+    .constant("modernizr", Modernizr)
     .constant('moment', moment)
     .config(settings_routing_1["default"])
     .config(profile_routing_1["default"])
@@ -59,7 +62,7 @@ angular.module('ins', ['ngAnimate', 'ui.router', 'monospaced.elastic', 'angularM
     });
 });
 
-},{"./feed/feed.routing":2,"./feed/feed.service":3,"./profile/profile.routing":4,"./settings.routing":5,"./user.service":6}],2:[function(require,module,exports){
+},{"./feed/feed.routing":2,"./feed/feed.service":3,"./placeholder.drv":4,"./profile/profile.routing":5,"./settings.routing":6,"./user.service":7}],2:[function(require,module,exports){
 function default_1($stateProvider) {
     function setPosts($rootScope, posts, masonary) {
         var _this = this;
@@ -314,6 +317,20 @@ var FeedService = (function () {
 exports["default"] = FeedService;
 
 },{}],4:[function(require,module,exports){
+/*global angular*/
+function PlaceHolderDirective(modernizr) {
+    return {
+        restrict: 'A',
+        link: function (scope, el) {
+            if (!modernizr.input.placeholder) {
+                $(el[0]).placeholder();
+            }
+        }
+    };
+}
+exports["default"] = PlaceHolderDirective;
+
+},{}],5:[function(require,module,exports){
 function default_1($stateProvider) {
     function setPosts(posts) {
         this.posts = posts;
@@ -368,7 +385,7 @@ function default_1($stateProvider) {
 }
 exports["default"] = default_1;
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 function default_1($stateProvider) {
     $stateProvider
         .state('settings', {
@@ -378,7 +395,7 @@ function default_1($stateProvider) {
 }
 exports["default"] = default_1;
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var UserService = (function () {
     function UserService() {
     }

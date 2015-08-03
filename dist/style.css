@@ -30,6 +30,9 @@ body {
 a {
   color: #cccccc;
 }
+img {
+  border: 0;
+}
 h1,
 h2,
 h3,
@@ -88,10 +91,10 @@ input.ins-toggle-round-flat + label {
   transition: background 0.4s;
 }
 input.ins-toggle-round-flat + label:before,
-input.ins-toggle-round-flat + label:after {
+input.ins-toggle-round-flat + label::after {
   display: block;
   position: absolute;
-  content: "";
+  content: " ";
 }
 input.ins-toggle-round-flat + label:before {
   top: 2px;
@@ -110,7 +113,7 @@ input.ins-toggle-round-flat + label:before {
   -o-transition: background 0.4s;
   transition: background 0.4s;
 }
-input.ins-toggle-round-flat + label:after {
+input.ins-toggle-round-flat + label::after {
   top: 4px;
   left: 4px;
   bottom: 4px;
@@ -130,10 +133,10 @@ input.ins-toggle-round-flat + label:after {
 input.ins-toggle-round-flat:checked + label {
   background-color: #e4e6ea;
 }
-input.ins-toggle-round-flat:checked + label:after {
+input.ins-toggle-round-flat:checked + label::after {
   margin-left: 30px;
 }
-input.ins-toggle-round-flat:checked + label:before {
+input.ins-toggle-round-flat:checked + label::before {
   background-color: #e4e6ea;
 }
 .icon-radio-unchecked {

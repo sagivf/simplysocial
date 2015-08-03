@@ -22,37 +22,43 @@ var dest = path.join('dist'),
       'angular/angular.min.js',
       'angular-moment/angular-moment.min.js',
       'angular-animate/angular-animate.min.js',
+      'angular-animate/angular-animate.min.js',
       'moment/min/moment.min.js',
+      'jquery/dist/jquery.min.js',
+      'jquery-placeholder/jquery.placeholder.min.js',
       'angular-elastic/elastic.js'
     ].map(function(file){
         return path.join('bower_components', file);
-      });
+      }).concat();
 
 gulp.task("build", "Create build resources", ["build:less", "build:templates", "build:scripts"], function(){
+  gulp.src(['src/js/modernizer.js'])
+    .pipe(gulp.dest('dist'));
+
   return gulp.src(bowerFiles)
     .pipe(gulp.dest('dist/bower'));
 });
 
 gulp.task("build:less", "Create css from less", false, function () {
-  gulp.src(lessFile)
-      .pipe(less())
-      .on('error', function (err) {
-        console.log(err.message);
-      })
-      .pipe(gulp.dest(dest));
+  return gulp.src(lessFile)
+            .pipe(less())
+            .on('error', function (err) {
+              console.log(err.message);
+            })
+            .pipe(gulp.dest(dest));
 });
 
 gulp.task("build:templates", "Create html templateCache from jade", false, function () {
-  gulp.src(jadeFiles)
-    .pipe(jade({
-      locals: {}
-    }))
-    .pipe(templateCache({
-      module: 'ins',
-      root: 'templates-cache/'
-    }))
-    .pipe(rename('templates.js'))
-    .pipe(gulp.dest(dest));
+  return gulp.src(jadeFiles)
+            .pipe(jade({
+              locals: {}
+            }))
+            .pipe(templateCache({
+              module: 'ins',
+              root: 'templates-cache/'
+            }))
+            .pipe(rename('templates.js'))
+            .pipe(gulp.dest(dest));
 });
 
 gulp.task('build:tsc', function () {
