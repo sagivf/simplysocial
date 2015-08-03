@@ -91,32 +91,33 @@
         }
       }
     }
+  }
 
-    &.ng-move,
-    &.ng-enter,
-    &.ng-leave {
-      .lh-transition(all linear 0.5s);
+
+  div:not(.ins-masonary) {
+    article {
+      &.ng-move,
+      &.ng-enter,
+      &.ng-leave {
+        .lh-transition(all linear 0.5s);
+      }
+
+      &.ng-leave.ng-leave-active,
+      &.ng-move,
+      &.ng-enter {
+        color: @white;
+      }
+
+      &.ng-leave,
+      &.ng-move.ng-move-active,
+      &.ng-enter.ng-enter-active {
+        color: inherit;
+      }
     }
-
-    &.ng-leave.ng-leave-active,
-    &.ng-move,
-    &.ng-enter {
-      opacity:0;
-    }
-
-    &.ng-leave,
-    &.ng-move.ng-move-active,
-    &.ng-enter.ng-enter-active {
-      opacity:1;
-    }
-
   }
 
   .ins-masonary {
     article {
-      .ins-body .ins-expand {
-      }
-
       > img {
         margin-bottom: 20px;
       }

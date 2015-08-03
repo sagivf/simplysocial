@@ -732,6 +732,7 @@ nav.ins-nav li.ins-right-align i.icon-grid {
   }
 }
 article {
+  opacity: 1;
   font-size: 16px;
   position: relative;
   font-family: ProximaNova-Light;
@@ -816,23 +817,23 @@ article .ins-comments .ins-respond input {
   width: 100%;
   padding: 10px;
 }
-article.ng-move,
-article.ng-enter,
-article.ng-leave {
+div:not(.ins-masonary) article.ng-move,
+div:not(.ins-masonary) article.ng-enter,
+div:not(.ins-masonary) article.ng-leave {
   -webkit-transition: all linear 0.5s;
   -moz-transition: all linear 0.5s;
   -o-transition: all linear 0.5s;
   transition: all linear 0.5s;
 }
-article.ng-leave.ng-leave-active,
-article.ng-move,
-article.ng-enter {
-  opacity: 0;
+div:not(.ins-masonary) article.ng-leave.ng-leave-active,
+div:not(.ins-masonary) article.ng-move,
+div:not(.ins-masonary) article.ng-enter {
+  color: white;
 }
-article.ng-leave,
-article.ng-move.ng-move-active,
-article.ng-enter.ng-enter-active {
-  opacity: 1;
+div:not(.ins-masonary) article.ng-leave,
+div:not(.ins-masonary) article.ng-move.ng-move-active,
+div:not(.ins-masonary) article.ng-enter.ng-enter-active {
+  color: inherit;
 }
 .ins-masonary article {
   padding-bottom: 40px;
