@@ -1,7 +1,7 @@
 div(ng-class="{ 'ins-masonary': content.masonary === 'yes' }")
   article.ins-masonary-item(ng-repeat="post in content.posts")
     .ins-actions
-      i.icon-undo
+      i.icon-arrow-back-outline
       i.icon-heart
       span(am-time-ago="post.time")
     .ins-body
@@ -12,7 +12,7 @@ div(ng-class="{ 'ins-masonary': content.masonary === 'yes' }")
         div.ins-expand(ng-if="post.comments.length")
           a(ng-click="post.expanded = !post.expanded")
             | {{ post.expanded ? 'collapse' : 'expand' }}
-            i.icon-triangle-down
+            i.icon-triangle-dow n
     div(ng-show="post.expanded").ins-comments
       ul
         li(ng-repeat="comment in post.comments")

@@ -674,13 +674,16 @@ article {
 }
 article .ins-actions {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 18px;
+  top: 18px;
   color: #a9a9a9;
 }
 article .ins-actions i {
   font-size: 0.8em;
-  margin-right: 10px;
+  margin-right: 15px;
+}
+article .ins-actions i.icon-arrow-back-outline {
+  font-size: 1em;
 }
 article .ins-body {
   padding: 20px 40px 0 80px;
@@ -754,6 +757,9 @@ article .ins-comments .ins-respond input {
   text-align: center;
   font-weight: 300;
   color: white;
+}
+.ins-user-profile img {
+  border-radius: 8px;
 }
 .ins-user-profile h2 {
   font-size: 2.5em;
