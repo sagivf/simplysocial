@@ -11,8 +11,8 @@ div
         p(ng-bind-html='post.text')
         div.ins-expand(ng-if="post.comments.length")
           a(ng-click="post.expanded = !post.expanded")
-            | {{ post.expanded ? 'collapse' : 'expand' }}
-            i.icon-circle-down
+            | {{ post.expanded ? 'Collapse' : 'Expand' }}
+            i(ng-class="{ 'icon-triangle-up': post.expanded, 'icon-triangle-down': !post.expanded }")
     div(ng-show="post.expanded").ins-comments
       ul
         li(ng-repeat="comment in post.comments")

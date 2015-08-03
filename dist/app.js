@@ -64,15 +64,17 @@ angular.module('ins', ['ngAnimate', 'ui.router', 'monospaced.elastic', 'angularM
 
 },{"./feed/feed.routing":2,"./feed/feed.service":3,"./placeholder.drv":4,"./profile/profile.routing":5,"./settings.routing":6,"./user.service":7}],2:[function(require,module,exports){
 function default_1($stateProvider) {
-    function setPosts($rootScope, posts, masonary) {
+    function setPosts($rootScope, $window, posts, masonary, modernizr) {
         var _this = this;
         $rootScope.$on('feed:add', function (event, post) {
             _this.posts.unshift(post);
         });
         this.masonary = masonary;
         this.posts = posts;
+        if (!modernizr.input.placeholder) {
+            $window.setMasonary();
+        }
     }
-    ;
     $stateProvider
         .state('home.feed', {
         url: '/feed',

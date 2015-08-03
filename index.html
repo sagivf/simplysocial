@@ -10,6 +10,27 @@
   <script src="dist/bower/jquery.min.js"></script>
   <script src="dist/bower/jquery.placeholder.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.js"></script>
+  <style>
+    .ins-masonary .ins-masonary-item {
+      width: 320px !important;
+    }
+
+    @media only screen and (max-width: 800px) {
+      .ins-masonary .ins-masonary-item {
+        width: 100% !important;
+      }
+    }
+  </style>
+  <script>
+    window.setMasonary = function() {
+      setTimeout(function () {
+        $('.ins-masonary').masonry({
+          itemSelector: '.ins-masonary-item',
+          columnWidth: 350
+        });
+      }, 100);
+    }
+  </script>
   <![endif]-->
 
   <!-- Custom webfonts -->

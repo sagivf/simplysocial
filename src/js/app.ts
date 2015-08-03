@@ -7,7 +7,6 @@ import feedRouting from "./feed/feed.routing"
 import profileRouting from "./profile/profile.routing"
 import placeholderDirective from "./placeholder.drv"
 
-
 angular.module('ins', ['ngAnimate', 'ui.router', 'monospaced.elastic', 'angularMoment'])
   .config(function ($stateProvider, $animateProvider, $urlRouterProvider, moment) {
     $animateProvider.classNameFilter(/angular-animate/);

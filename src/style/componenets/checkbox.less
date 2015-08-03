@@ -8,6 +8,7 @@
 
   .ins-switch {
     position: relative;
+    padding-left: 60px;
   }
 
   .ins-toggle {
@@ -17,10 +18,12 @@
 
     & + label {
       display: block;
-      position: relative;
+      position: absolute;
+      left: 0;
+      top: -4px;
       cursor: pointer;
       outline: none;
-      .lh-user-select(none)
+      .lh-user-select(none);
     }
   }
 
@@ -32,14 +35,14 @@
     .lh-transition(background 0.4s);
   }
 
-  input.ins-toggle-round-flat + label:before, input.ins-toggle-round-flat + label::after {
+  input.ins-toggle-round-flat + label::before, input.ins-toggle-round-flat + label::after {
     display: block;
     position: absolute;
     content: " ";
   }
 
   input.ins-toggle-round-flat {
-    & + label:before {
+    + label::before {
       top: 2px;
       left: 2px;
       bottom: 2px;
@@ -49,7 +52,7 @@
       .lh-transition(background 0.4s);
     }
 
-    & + label::after {
+    + label::after {
       top: 4px;
       left: 4px;
       bottom: 4px;
@@ -61,15 +64,15 @@
   }
 
   input.ins-toggle-round-flat:checked {
-    & + label {
+    + label {
       background-color: @grey;
     }
 
-    & + label::after {
+    + label::after {
       margin-left: @height;
     }
 
-    & + label::before {
+    + label::before {
       background-color: @grey;
     }
   }

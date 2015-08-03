@@ -1,12 +1,16 @@
 export default function ($stateProvider) {
-  function setPosts($rootScope, posts, masonary){
+  function setPosts($rootScope, $window, posts, masonary, modernizr){
     $rootScope.$on('feed:add', (event, post) => {
       this.posts.unshift(post);
     });
 
     this.masonary = masonary;
     this.posts = posts;
-  };
+
+    if(!modernizr.input.placeholder) {
+      $window.setMasonary();
+    }
+  }
 
   $stateProvider
     .state('home.feed', {
