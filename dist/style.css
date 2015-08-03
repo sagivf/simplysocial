@@ -233,6 +233,8 @@ header .ins-right-position img {
 }
 header .ins-right-position input {
   height: 100%;
+  color: #e4e6ea;
+  font-size: 1.2em;
   background: transparent;
   -webkit-border-radius: 4px;
   -webkit-background-clip: padding-box;
@@ -240,7 +242,7 @@ header .ins-right-position input {
   -moz-background-clip: padding;
   border-radius: 4px;
   background-clip: padding-box;
-  padding: 2px 34px 0 4px;
+  padding: 0 34px 0 4px;
   width: 200px;
   vertical-align: top;
   margin-right: 20px;
@@ -436,8 +438,9 @@ footer nav ul li a {
   text-transform: uppercase;
 }
 main .ins-navigation-section {
-  background: url(../images/main.jpg);
-  padding: 100px 0 0 0;
+  background: url(../images/hero.jpg);
+  padding: 135px 0 0 0;
+  background-size: cover;
 }
 main nav {
   display: table;
@@ -445,7 +448,7 @@ main nav {
   text-transform: uppercase;
   height: 40px;
   width: 576px;
-  margin: 60px auto 0 auto;
+  margin: 95px auto 0 auto;
   position: relative;
 }
 main nav ul {
@@ -763,5 +766,6 @@ article .ins-comments .ins-respond input {
 }
 .ins-user-profile a {
   color: #262728;
-  font-size: 1.1em;
+  font-family: ProximaNova-Bold;
+  font-size: 1.3em;
 }
