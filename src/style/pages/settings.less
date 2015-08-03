@@ -3,22 +3,30 @@
 & {
   @import (multiple, reference) "../sizes";
   @import (multiple, reference) "../colors";
+  @import (multiple, reference) "../mixins";
+
   @image-wrapper-width: 250px;
 
   .ins-settings-page {
 
     font-size: 15px;
 
+    h1 + h2 {
+      margin-top: 10px;
+    }
+
     h2 {
-      margin-top: 20px;
       font-family: ProximaNova-Bold;
-      font-size: 13px;
+      margin: 40px 0 20px 0;
+      font-size: 1em;
       color: rgb(141, 145, 153);
       text-transform: uppercase;
-      margin-bottom: 45px;
     }
 
     form.ins-form {
+      .ins-clearfix();
+
+      margin-bottom: 20px;
 
       .ins-image-section {
         width: @image-wrapper-width;
@@ -40,17 +48,29 @@
       .ins-inputs-section {
         display: inline-block;
         width: calc(~"100% - 250px");
-        max-width: @image-wrapper-width;
+        max-width: 300px;
         float: left;
         font-size: 24px;
         line-height: 24px;
         .ins-input-image {
           position: relative;
           i {
-            color: @grey;
+            color: lighten(@black, 30%);
             position: absolute;
             left: 15px;
+            top: 7px;
+          }
+        }
+        .ins-password {
+          position: relative;
+          input {
+            padding-right: 60px;
+          }
+          a {
+            position: absolute;
             top: 8px;
+            font-size: 0.6em;
+            right: 10px;
           }
         }
 
@@ -66,15 +86,13 @@
     }
 
     hr {
-      clear: both;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin: 20px 0;
       border: 0;
       border-top: 2px solid @grey;
     }
 
     ul {
-      margin-bottom: 50px;
+      margin: 20px 0 30px 0;
 
       &.ins-separate-radios{
        li {
@@ -89,7 +107,7 @@
         display: table-cell;
         vertical-align: middle;
         &:last-of-type {
-          padding-left: 30px;
+          padding-left: 20px;
         }
       }
     }
@@ -97,11 +115,14 @@
 
 
   @media only screen and (max-width: @mobile-width) {
-    .ins-settings-page form.ins-form {
-      .ins-image-section, .ins-inputs-section {
-        width: 100%;
-        padding: 10px 20px;
-        max-width: none;
+    .ins-settings-page {
+      padding: 20px;
+      form.ins-form {
+        .ins-image-section, .ins-inputs-section {
+          width: 100%;
+          padding: 10px 20px;
+          max-width: none;
+        }
       }
     }
   }

@@ -91,6 +91,25 @@
         }
       }
     }
+
+    &.ng-move,
+    &.ng-enter,
+    &.ng-leave {
+      .lh-transition(all linear 0.5s);
+    }
+
+    &.ng-leave.ng-leave-active,
+    &.ng-move,
+    &.ng-enter {
+      opacity:0;
+    }
+
+    &.ng-leave,
+    &.ng-move.ng-move-active,
+    &.ng-enter.ng-enter-active {
+      opacity:1;
+    }
+
   }
 
   .ins-masonary {

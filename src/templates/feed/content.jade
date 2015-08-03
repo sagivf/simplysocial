@@ -1,5 +1,5 @@
 div(ng-class="{ 'ins-masonary': content.masonary === 'yes' }")
-  article.ins-masonary-item(ng-repeat="post in content.posts")
+  article.ins-masonary-item.angular-animate(ng-repeat="post in content.posts")
     .ins-actions
       i.icon-arrow-back-outline
       i.icon-heart
@@ -12,7 +12,7 @@ div(ng-class="{ 'ins-masonary': content.masonary === 'yes' }")
         div.ins-expand(ng-if="post.comments.length")
           a(ng-click="post.expanded = !post.expanded")
             | {{ post.expanded ? 'collapse' : 'expand' }}
-            i.icon-triangle-dow n
+            i(ng-class="{ 'icon-triangle-up': post.expanded, 'icon-triangle-down': !post.expanded }")
     div(ng-show="post.expanded").ins-comments
       ul
         li(ng-repeat="comment in post.comments")

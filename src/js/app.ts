@@ -7,8 +7,10 @@ import feedRouting from "./feed/feed.routing"
 import profileRouting from "./profile/profile.routing"
 
 
-angular.module('ins', ['ui.router', 'monospaced.elastic', 'angularMoment'])
-  .config(function ($stateProvider, $urlRouterProvider, moment) {
+angular.module('ins', ['ngAnimate', 'ui.router', 'monospaced.elastic', 'angularMoment'])
+  .config(function ($stateProvider, $animateProvider, $urlRouterProvider, moment) {
+    $animateProvider.classNameFilter(/angular-animate/);
+
     moment.lang('en', {
       relativeTime : {
         future: "in %s",

@@ -21,4 +21,5 @@
 <glyph unicode="&#xe60e;" glyph-name="radio-unchecked" d="M512 960c-282.77 0-512-229.23-512-512s229.23-512 512-512 512 229.23 512 512-229.23 512-512 512zM512 64c-212.078 0-384 171.922-384 384s171.922 384 384 384c212.078 0 384-171.922 384-384s-171.922-384-384-384z" />
 <glyph unicode="&#xf05b;" glyph-name="triangle-down" horiz-adv-x="767" d="M0 576l383.75-383.75 383.75 383.75h-767.5z" />
 <glyph unicode="&#xf05e;" glyph-name="three-bars" horiz-adv-x="768" d="M0 768v-128h768v128h-768zM0 384h768v128h-768v-128zM0 128h768v128h-768v-128z" />
+<glyph unicode="&#xf0aa;" glyph-name="triangle-up" horiz-adv-x="767" d="M383.75 704l-383.75-383.75h767.5l-383.75 383.75z" />
 </font></defs></svg>

@@ -21,6 +21,7 @@ var dest = path.join('dist'),
       'ui-router/release/angular-ui-router.min.js',
       'angular/angular.min.js',
       'angular-moment/angular-moment.min.js',
+      'angular-animate/angular-animate.min.js',
       'moment/min/moment.min.js',
       'angular-elastic/elastic.js'
     ].map(function(file){

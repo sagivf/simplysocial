@@ -9,9 +9,7 @@
   <![endif]-->
 
   <!-- Custom webfonts -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400,300' rel='stylesheet' type='text/css'>
   <link type="text/css" rel="stylesheet" href="fonts/icomoon/style.css">
-
   <link type="text/css" rel="stylesheet" href="dist/style.css">
 
   <!-- Load vendor scripts script. -->
@@ -19,6 +17,7 @@
   <script src="dist/bower/angular-ui-router.min.js" type="text/javascript"></script>
   <script src="dist/bower/moment.min.js"></script>
   <script src="dist/bower/angular-moment.min.js"></script>
+  <script src="dist/bower/angular-animate.min.js"></script>
   <script src="dist/bower/elastic.js" type="text/javascript"></script>
 </head>
 <body ng-app="ins">
@@ -69,7 +68,7 @@
 </footer>
 
 <div class="ins-overlay" ng-show="showMessageWindow" ng-cloak></div>
-<div class="ins-modal" ng-show="showMessageWindow" ng-cloak>
+<div class="ins-modal angular-animate" ng-show="showMessageWindow" ng-cloak>
   <h2>Create new message</h2>
   <textarea ng-model="newPostOverlay"></textarea>
 

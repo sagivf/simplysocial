@@ -5,8 +5,9 @@ var feed_service_1 = require("./feed/feed.service");
 var user_service_1 = require("./user.service");
 var feed_routing_1 = require("./feed/feed.routing");
 var profile_routing_1 = require("./profile/profile.routing");
-angular.module('ins', ['ui.router', 'monospaced.elastic', 'angularMoment'])
-    .config(function ($stateProvider, $urlRouterProvider, moment) {
+angular.module('ins', ['ngAnimate', 'ui.router', 'monospaced.elastic', 'angularMoment'])
+    .config(function ($stateProvider, $animateProvider, $urlRouterProvider, moment) {
+    $animateProvider.classNameFilter(/angular-animate/);
     moment.lang('en', {
         relativeTime: {
             future: "in %s",

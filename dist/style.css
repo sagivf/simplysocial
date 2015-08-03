@@ -49,6 +49,11 @@ i[class^="icon-"],
 [class*=" icon-"] {
   cursor: pointer;
 }
+.icon-video {
+  position: relative;
+  top: 3px;
+  font-size: 1.2em;
+}
 .ins-switch {
   position: relative;
 }
@@ -316,7 +321,7 @@ header .ins-left-position img {
   color: white;
 }
 .ins-create-post i {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .icon-cancel-circle {
   position: absolute;
@@ -380,6 +385,12 @@ header .ins-left-position img {
   margin: 0;
   resize: none;
 }
+.ins-modal.ng-hide-add {
+  animation: 0.2s lightSpeedOut ease;
+}
+.ins-modal.ng-hide-remove {
+  animation: 0.5s flipInX ease;
+}
 .ins-overlay {
   -webkit-filter: blur();
   -moz-filter: blur();
@@ -398,6 +409,40 @@ header .ins-left-position img {
   .ins-modal {
     left: 40px;
     right: 40px;
+  }
+}
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transition-timing-function: ease-in;
+  }
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+  100% {
+    transform: perspective(400px);
+  }
+}
+@keyframes lightSpeedOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -100%, 0);
+    -o-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
   }
 }
 footer {
@@ -579,13 +624,26 @@ nav.ins-nav li.ins-right-align i.icon-grid {
 .ins-settings-page {
   font-size: 15px;
 }
+.ins-settings-page h1 + h2 {
+  margin-top: 10px;
+}
 .ins-settings-page h2 {
-  margin-top: 20px;
   font-family: ProximaNova-Bold;
-  font-size: 13px;
+  margin: 40px 0 20px 0;
+  font-size: 1em;
   color: #8d9199;
   text-transform: uppercase;
-  margin-bottom: 45px;
+}
+.ins-settings-page form.ins-form {
+  margin-bottom: 20px;
+}
+.ins-settings-page form.ins-form:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
 .ins-settings-page form.ins-form .ins-image-section {
   width: 250px;
@@ -605,7 +663,7 @@ nav.ins-nav li.ins-right-align i.icon-grid {
 .ins-settings-page form.ins-form .ins-inputs-section {
   display: inline-block;
   width: calc(100% - 250px);
-  max-width: 250px;
+  max-width: 300px;
   float: left;
   font-size: 24px;
   line-height: 24px;
@@ -614,10 +672,22 @@ nav.ins-nav li.ins-right-align i.icon-grid {
   position: relative;
 }
 .ins-settings-page form.ins-form .ins-inputs-section .ins-input-image i {
-  color: #e4e6ea;
+  color: #717476;
   position: absolute;
   left: 15px;
+  top: 7px;
+}
+.ins-settings-page form.ins-form .ins-inputs-section .ins-password {
+  position: relative;
+}
+.ins-settings-page form.ins-form .ins-inputs-section .ins-password input {
+  padding-right: 60px;
+}
+.ins-settings-page form.ins-form .ins-inputs-section .ins-password a {
+  position: absolute;
   top: 8px;
+  font-size: 0.6em;
+  right: 10px;
 }
 .ins-settings-page form.ins-form .ins-inputs-section label {
   font-size: 1.5em;
@@ -627,14 +697,12 @@ nav.ins-nav li.ins-right-align i.icon-grid {
   width: 100%;
 }
 .ins-settings-page hr {
-  clear: both;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0;
   border: 0;
   border-top: 2px solid #e4e6ea;
 }
 .ins-settings-page ul {
-  margin-bottom: 50px;
+  margin: 20px 0 30px 0;
 }
 .ins-settings-page ul.ins-separate-radios li {
   margin-top: 10px;
@@ -647,9 +715,12 @@ nav.ins-nav li.ins-right-align i.icon-grid {
   vertical-align: middle;
 }
 .ins-settings-page li label:last-of-type {
-  padding-left: 30px;
+  padding-left: 20px;
 }
 @media only screen and (max-width: 576px) {
+  .ins-settings-page {
+    padding: 20px;
+  }
   .ins-settings-page form.ins-form .ins-image-section,
   .ins-settings-page form.ins-form .ins-inputs-section {
     width: 100%;
@@ -741,6 +812,24 @@ article .ins-comments .ins-respond input {
   font-size: 1em;
   width: 100%;
   padding: 10px;
+}
+article.ng-move,
+article.ng-enter,
+article.ng-leave {
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+article.ng-leave.ng-leave-active,
+article.ng-move,
+article.ng-enter {
+  opacity: 0;
+}
+article.ng-leave,
+article.ng-move.ng-move-active,
+article.ng-enter.ng-enter-active {
+  opacity: 1;
 }
 .ins-masonary article {
   padding-bottom: 40px;

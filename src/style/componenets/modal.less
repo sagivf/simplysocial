@@ -54,7 +54,6 @@
           margin-right: 5px;
         }
       }
-
     }
 
     h2 {
@@ -72,6 +71,10 @@
       margin: 0;
       resize: none;
     }
+
+    &.ng-hide-add         { animation:0.2s lightSpeedOut ease; }
+    &.ng-hide-remove      { animation:0.5s flipInX ease; }
+
   }
 
   .ins-overlay {
@@ -91,6 +94,54 @@
     .ins-modal {
       left: 40px;
       right: 40px;
+    }
+  }
+
+
+  @keyframes flipInX {
+    0% {
+      transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      transition-timing-function: ease-in;
+      opacity: 0;
+    }
+
+    40% {
+      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      transition-timing-function: ease-in;
+      transition-timing-function: ease-in;
+    }
+
+    60% {
+      transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      opacity: 1;
+    }
+
+    80% {
+      transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+
+    100% {
+      transform: perspective(400px);
+      transform: perspective(400px);
+      transform: perspective(400px);
+    }
+  }
+
+
+  @keyframes lightSpeedOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      .lh-transform(translate3d(0, -100%, 0));
+      opacity: 0;
     }
   }
 }
