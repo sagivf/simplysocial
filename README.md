@@ -3,6 +3,11 @@
 [Web Site](http://sagivf.github.io/simplysocial/)
 
 
+## Prerequisites
+* iojs 
+* npm
+* bower
+
 ## Install
 
 __Libraries__
