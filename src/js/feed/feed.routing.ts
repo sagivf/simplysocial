@@ -7,8 +7,8 @@ export default function ($stateProvider) {
     this.masonary = masonary;
     this.posts = posts;
 
-    if(!modernizr.input.placeholder) {
-      $window.setMasonary();
+    if(!modernizr.csscolumns && $window.Ins && $window.Ins.IE && $window.Ins.IE.setMasonary) {
+      $window.Ins.IE.setMasonary();
     }
   }
 
@@ -18,11 +18,12 @@ export default function ($stateProvider) {
       views: {
         'navigation': {
           templateUrl: 'templates-cache/feed/navigation.html',
-          controller: function($rootScope, feed, $timeout){
+          controller: function($rootScope, feed, $timeout, user){
+            var userDetails = user.fetch();
             this.keyDown = function(event){
               if (event.keyCode == 13){
                 feed.add({
-                  name: 'Jessica Tuan',
+                  name: userDetails.name,
                   userImage: 'user-profile.jpg',
                   text: this.post,
                   time: moment()

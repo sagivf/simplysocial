@@ -1,6 +1,6 @@
 /// <reference path="../../typings/tsd.d.ts"/>
 
-import settingsRouting from "./settings.routing"
+import settingsRouting from "./settings/settings.routing"
 import FeedService from "./feed/feed.service"
 import UserService from "./user.service"
 import feedRouting from "./feed/feed.routing"

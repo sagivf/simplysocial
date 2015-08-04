@@ -18,7 +18,7 @@
     "angular": "~1.4.3",
     "angular-moment": "~0.10.2",
     "angular-animate": "~1.4.3",
-    "jquery-placeholder": "~2.1.2"
+    "angular-elastic": "~2.5.0"
   },
   "resolutions": {
     "angular": "~1.4.3"

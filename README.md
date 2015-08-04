@@ -46,5 +46,16 @@ $ gulp
 * Less
 * Icomoon __https://icomoon.io__
 
+## Folders
+* bower_components (generated) - bower dependencies
+* dist (generated) - all gulp created files
+* external - external resources that would usually be loaded with Ajax
+* images - Site images
+* lib - non bower resources
+* node_modules (generated) - npm dependencies 
+* src - all the self created source files (js, style, templates)
+* typing - TypeScript Definitions
+
+
 ## License
 Copyright &copy; 2015 ISC License

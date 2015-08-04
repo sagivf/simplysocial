@@ -1,6 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /// <reference path="../../typings/tsd.d.ts"/>
-var settings_routing_1 = require("./settings.routing");
+var settings_routing_1 = require("./settings/settings.routing");
 var feed_service_1 = require("./feed/feed.service");
 var user_service_1 = require("./user.service");
 var feed_routing_1 = require("./feed/feed.routing");
@@ -62,7 +62,7 @@ angular.module('ins', ['ngAnimate', 'ui.router', 'monospaced.elastic', 'angularM
     });
 });
 
-},{"./feed/feed.routing":2,"./feed/feed.service":3,"./placeholder.drv":4,"./profile/profile.routing":5,"./settings.routing":6,"./user.service":7}],2:[function(require,module,exports){
+},{"./feed/feed.routing":2,"./feed/feed.service":3,"./placeholder.drv":4,"./profile/profile.routing":5,"./settings/settings.routing":6,"./user.service":7}],2:[function(require,module,exports){
 function default_1($stateProvider) {
     function setPosts($rootScope, $window, posts, masonary, modernizr) {
         var _this = this;
@@ -71,8 +71,8 @@ function default_1($stateProvider) {
         });
         this.masonary = masonary;
         this.posts = posts;
-        if (!modernizr.input.placeholder) {
-            $window.setMasonary();
+        if (!modernizr.csscolumns && $window.Ins && $window.Ins.IE && $window.Ins.IE.setMasonary) {
+            $window.Ins.IE.setMasonary();
         }
     }
     $stateProvider
@@ -81,11 +81,12 @@ function default_1($stateProvider) {
         views: {
             'navigation': {
                 templateUrl: 'templates-cache/feed/navigation.html',
-                controller: function ($rootScope, feed, $timeout) {
+                controller: function ($rootScope, feed, $timeout, user) {
+                    var userDetails = user.fetch();
                     this.keyDown = function (event) {
                         if (event.keyCode == 13) {
                             feed.add({
-                                name: 'Jessica Tuan',
+                                name: userDetails.name,
                                 userImage: 'user-profile.jpg',
                                 text: this.post,
                                 time: moment()
@@ -392,7 +393,11 @@ function default_1($stateProvider) {
     $stateProvider
         .state('settings', {
         url: '/settings',
-        templateUrl: 'templates-cache/settings/settings.html'
+        templateUrl: 'templates-cache/settings/settings.html',
+        controllerAs: 'settings',
+        controller: function ($scope, user) {
+            this.user = user.fetch();
+        }
     });
 }
 exports["default"] = default_1;
@@ -405,6 +410,7 @@ var UserService = (function () {
         return {
             name: 'Jessica Tuan',
             firstName: 'Jessica',
+            email: 'jessica@simply.com',
             description: 'Designer and Developer living in San Diego, CA',
             site: 'jessicatuan.com',
             followers: 2542,

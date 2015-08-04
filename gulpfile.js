@@ -18,21 +18,19 @@ var dest = path.join('dist'),
     lessFile = path.join('src', 'style', 'style.less'),
     lessFiles = path.join('src', 'style', '**', '*.less'),
     bowerFiles = [
-      'ui-router/release/angular-ui-router.min.js',
+      'moment/min/moment.min.js',
       'angular/angular.min.js',
       'angular-moment/angular-moment.min.js',
       'angular-animate/angular-animate.min.js',
       'angular-animate/angular-animate.min.js',
-      'moment/min/moment.min.js',
-      'jquery/dist/jquery.min.js',
-      'jquery-placeholder/jquery.placeholder.min.js',
-      'angular-elastic/elastic.js'
+      'angular-elastic/elastic.js',
+      'ui-router/release/angular-ui-router.min.js'
     ].map(function(file){
         return path.join('bower_components', file);
       }).concat();
 
 gulp.task("build", "Create build resources", ["build:less", "build:templates", "build:scripts"], function(){
-  gulp.src(['src/js/modernizer.js'])
+  gulp.src(['lib/modernizer.js'])
     .pipe(gulp.dest('dist'));
 
   return gulp.src(bowerFiles)

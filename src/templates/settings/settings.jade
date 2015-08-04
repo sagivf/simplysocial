@@ -9,14 +9,14 @@
           button.ins-button Change
         .ins-inputs-section
           div.ins-input-image
-            i.icon-user
-            input.ins-input
+            label(for="ins-setting-image").icon-user
+            input#ins-setting-image(type="text", ng-model="settings.user.name").ins-input
           div.ins-input-image
-            i.icon-mail
-            input(type="email").ins-input
+            label(for="ins-setting-email").icon-mail
+            input#ins-setting-email(type="email", ng-model="settings.user.email").ins-input
           div.ins-input-image.ins-password
-            i.icon-lock
-            input(type="password").ins-input
+            label(for="ins-setting-password").icon-lock
+            input#ins-setting-password(type="password").ins-input
             a change
       hr
       h2 Notifications

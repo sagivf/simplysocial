@@ -729,10 +729,11 @@ nav.ins-nav li.ins-right-align i.icon-grid {
 .ins-settings-page form.ins-form .ins-inputs-section .ins-input-image {
   position: relative;
 }
-.ins-settings-page form.ins-form .ins-inputs-section .ins-input-image i {
+.ins-settings-page form.ins-form .ins-inputs-section .ins-input-image label {
+  font-size: 1em;
   color: #717476;
   position: absolute;
-  left: 15px;
+  left: 10px;
   top: 7px;
 }
 .ins-settings-page form.ins-form .ins-inputs-section .ins-password {
