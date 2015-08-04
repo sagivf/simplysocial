@@ -921,6 +921,9 @@ div:not(.ins-masonary) article.ng-enter.ng-enter-active {
   top: auto;
   bottom: 20px;
 }
+.ins-masonary article.ins-article-expanded .ins-actions {
+  bottom: 10px;
+}
 .ins-user-profile {
   text-align: center;
   font-weight: 300;
