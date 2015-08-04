@@ -39,6 +39,7 @@ h3,
 h4,
 h5 {
   font-family: ProximaNova-bold;
+  font-weight: 300;
 }
 ul {
   padding: 0;
@@ -165,10 +166,10 @@ input.ins-toggle-round-flat:checked + label::before {
 .ins-form input.ins-input {
   border: 1px solid #bec3cc;
   border-radius: 4px;
-  line-height: 0.55em;
-  padding: 10px 10px 8px 50px;
+  line-height: 1.2rem;
+  padding: 10px 10px 10px 45px;
   color: #3f454d;
-  font-size: 0.55em;
+  font-size: 1.2rem;
   margin-bottom: 20px;
   background-size: 16px;
 }
@@ -732,10 +733,11 @@ nav.ins-nav li.ins-right-align i.icon-grid {
 }
 .ins-settings-page form.ins-form .ins-inputs-section .ins-input-image label {
   font-size: 1em;
+  line-height: 1.5em;
   color: #717476;
   position: absolute;
-  left: 10px;
-  top: 7px;
+  left: 12px;
+  top: 2px;
 }
 .ins-settings-page form.ins-form .ins-inputs-section .ins-password {
   position: relative;
