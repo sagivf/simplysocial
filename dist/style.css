@@ -156,7 +156,7 @@ input.ins-toggle-round-flat:checked + label::before {
   border: 1px solid transparent;
   border-radius: 4px;
   text-align: center;
-  font-size: 14px;
+  font-size: 1em;
   white-space: nowrap;
   margin-top: 10px;
   background-color: #00b286;
@@ -165,9 +165,10 @@ input.ins-toggle-round-flat:checked + label::before {
 .ins-form input.ins-input {
   border: 1px solid #bec3cc;
   border-radius: 4px;
+  line-height: 0.55em;
   padding: 10px 10px 8px 50px;
   color: #3f454d;
-  font-size: 16px;
+  font-size: 0.55em;
   margin-bottom: 20px;
   background-size: 16px;
 }
@@ -333,7 +334,7 @@ header .ins-left-position img {
   position: absolute;
   right: -20px;
   top: -20px;
-  font-size: 20px;
+  font-size: 1.5em;
 }
 .ins-modal {
   display: block;
@@ -803,7 +804,7 @@ nav.ins-nav li.ins-right-align i.icon-grid {
   }
 }
 article {
-  font-size: 16px;
+  font-size: 1.25em;
   position: relative;
   font-family: ProximaNova-Light;
   line-height: 1.125;
