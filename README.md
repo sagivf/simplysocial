@@ -56,6 +56,9 @@ $ gulp
 * src - all the self created source files (js, style, templates)
 * typing - TypeScript Definitions
 
+## Notes
+Masonry grid uses pure css column-count, for fallback(IE9) only uses __[Masonry]()_http://masonry.desandro.com/__
+
 
 ## License
 Copyright &copy; 2015 ISC License
